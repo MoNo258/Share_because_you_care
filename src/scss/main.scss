@@ -1,0 +1,15 @@
+@import "./generic/reset";
+//@import "./generic/print";
+@import "./settings/variables";
+@import "./settings/mixins";
+
+//@import "./partials/footer";
+@import "./partials/app";
+
+
+
+body {
+  font-family: $font-base;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
