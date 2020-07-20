@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-const HomeHero = () => {
+const HomeHero = ({id}) => {
 
     return (
         <div className='home__hero'>
 
 
-            <section>
+            <section id={id}>
                 <p>
                     home hero
                 </p>

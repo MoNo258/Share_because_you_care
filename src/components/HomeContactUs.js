@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-const HomeContactUs = () => {
+const HomeContactUs = ({id}) => {
 
     return (
         <div className='home__contact'>
 
 
-            <section>
+            <section id={id}>
                 <p>
                     home contact us
                 </p>

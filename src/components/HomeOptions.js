@@ -1,13 +1,13 @@
 import React from 'react';
 
 
-const HomeOptions = () => {
+const HomeOptions = ({id}) => {
 
     return (
         <div className='home__options'>
 
 
-            <section>
+            <section id={id}>
                 <p>
                     home options
                 </p>
