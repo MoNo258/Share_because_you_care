@@ -1,5 +1,9 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+# Share because you care or "Oddaj rzeczy" project
+
+In project was created as part of Coders Lab course.
+
 ## Available Scripts
 
 In the project directory, you can run:
