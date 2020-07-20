@@ -1,0 +1,19 @@
+@import "../settings/variables";
+.home{
+
+  .home__header {
+
+    color: $color-light-grey;
+    font-size: 14px;
+
+
+  }
+
+  .nav .nav-item .nav-link {
+    text-decoration: none;
+    text-transform: lowercase;
+
+  }
+
+}
+

@@ -15,7 +15,7 @@ import HomeFooter from "./HomeFooter";
 const Home = () => {
 
     return (
-        <div className='home'>
+        <div className='home container'>
             <HomeHeader/>
             <HomeHero/>
             <HomeThreeColumns/>
