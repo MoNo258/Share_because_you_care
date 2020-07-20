@@ -1,12 +1,8 @@
 @import "./generic/reset";
-//@import "./generic/print";
 @import "./settings/variables";
 @import "./settings/mixins";
-
-//@import "./partials/footer";
-@import "./partials/app";
-
-
+@import "./partials/HomeHeader";
+@import "./partials/HomeHero";
 
 body {
   font-family: $font-base;

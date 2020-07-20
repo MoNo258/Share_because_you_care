@@ -17,16 +17,16 @@ const Home = () => {
     return (
         <div className='home'>
             <HomeHeader/>
-            <HomeHero/>
-            <HomeThreeColumns/>
+            <HomeHero id='HomeHero'/>
+            <HomeThreeColumns id='HomeThreeColumns'/>
             <HomeSeparator/>
             <HomeFourColumns/>
             <HomeShareStuff/>
-            <HomeAboutUs/>
+            <HomeAboutUs id='HomeAboutUs'/>
             <HomeSeparator/>
-            <HomeOptions/>
+            <HomeOptions id='HomeOptions'/>
             <HomeOptionsList/>
-            <HomeContactUs/>
+            <HomeContactUs id='HomeContactUs'/>
             <HomeFooter/>
         </div>
     )
