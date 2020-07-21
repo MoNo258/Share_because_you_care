@@ -19,11 +19,11 @@ const Home = () => {
             <HomeHeader/>
             <HomeHero id='HomeHero'/>
             <HomeThreeColumns id='HomeThreeColumns'/>
-            <HomeSeparator/>
+            <HomeSeparator id='SeparatorFour' text='Wystarczą 4 proste kroki'/>
             <HomeFourColumns/>
             <HomeShareStuff/>
             <HomeAboutUs id='HomeAboutUs'/>
-            <HomeSeparator/>
+            <HomeSeparator text='Komu pomagamy?'/>
             <HomeOptions id='HomeOptions'/>
             <HomeOptionsList/>
             <HomeContactUs id='HomeContactUs'/>
