@@ -19,9 +19,9 @@ const HomeHero = ({id}) => {
                         <h3 className='hero__title hero__title--second'>
                             Oddaj niechiane rzeczy w zaufane ręce
                         </h3>
-                        <p className='hero__title--separator'>
+                        <div className='hero__title--separator'>
                             <img src={heroSeparator} alt="separator"/>
-                        </p>
+                        </div>
                         <ul className='hero__list'>
                             <li className='list__item'>
                                 <Link to='/logowanie' className='btn btn-lg list__btn'>Oddaj rzeczy</Link>
