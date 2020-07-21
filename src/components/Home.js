@@ -23,7 +23,7 @@ const Home = () => {
             <HomeFourColumns/>
             <HomeShareStuff/>
             <HomeAboutUs id='HomeAboutUs'/>
-            <HomeSeparator text='Komu pomagamy?'/>
+            <HomeSeparator id='SeparatorOptions' text='Komu pomagamy?'/>
             <HomeOptions id='HomeOptions'/>
             <HomeOptionsList/>
             <HomeContactUs id='HomeContactUs'/>
