@@ -6,14 +6,12 @@ const HomeHero = ({id}) => {
 
     return (
         <div className='home__hero'>
-
-
             <section className='hero' id={id}>
                 <div className='row'>
-                    <div className='col-6 hero--left'>
+                    <div className='col-6 col-sm-12 col-lg-6 hero--left'>
                         <img src={heroImage} alt="hero"/>
                     </div>
-                    <div className='col-6 hero--right'>
+                    <div className='col-6 col-sm-12 col-lg-6 hero--right'>
                         <h3 className='hero__title hero__title--first'>
                             Zacznij pomagać!
                         </h3>
@@ -30,9 +28,7 @@ const HomeHero = ({id}) => {
                         </ul>
                     </div>
                 </div>
-
             </section>
-
         </div>
     )
 };
