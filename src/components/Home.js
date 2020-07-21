@@ -7,7 +7,6 @@ import HomeFourColumns from "./HomeFourColumns";
 import HomeShareStuff from "./HomeShareStuff";
 import HomeAboutUs from "./HomeAboutUs";
 import HomeOptions from "./HomeOptions";
-import HomeOptionsList from "./HomeOptionsList";
 import HomeContactUs from "./HomeContactUs";
 import HomeFooter from "./HomeFooter";
 
@@ -25,7 +24,6 @@ const Home = () => {
             <HomeAboutUs id='HomeAboutUs'/>
             <HomeSeparator id='SeparatorOptions' text='Komu pomagamy?'/>
             <HomeOptions id='HomeOptions'/>
-            <HomeOptionsList/>
             <HomeContactUs id='HomeContactUs'/>
             <HomeFooter/>
         </div>

@@ -29,7 +29,9 @@
   align-items: center;
   line-height: 30px;
 }
-.options__title{
+.options__title,
+.options__button {
+  background: #fff;
   font-size: 24px;
   height: 80px;
   width: 210px;

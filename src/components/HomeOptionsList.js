@@ -1,153 +1,78 @@
-import React from 'react';
-import {Pagination, PaginationItem, PaginationLink} from 'reactstrap';
+import React, {useState, useEffect} from 'react';
+import {Pagination as PaginationOld, PaginationItem, PaginationLink} from 'reactstrap';
+import Pagination from "react-js-pagination";
+import HomeOptionsListItem from "./HomeOptionsListItem";
+import foundations from "../data/foundations";
+import organizations from "../data/organizations";
+import locals from "../data/locals";
+// import {OptionsPagination} from "./OptionsPagination";
 
-const HomeOptionsList = () => {
+const HomeOptionsList = ({option}) => {
+    const [activePage, setActivePage] = useState(1);
+    // const [activeOption, setActiveOption] = useState('funds');
+    const [activeOption, setActiveOption] = useState('funds');
+    const [totalItems, setTotalItems] = useState(1);
+    const [currentList, setCurrentList] = useState([]);
+    const [displayList, setDisplayList] = useState(currentList);
+
+
+    useEffect(() => {
+        setActiveOption(option);
+        setTotalItems((prev) => {
+            let result;
+            result = activeOption === 'funds' ? (foundations.length)
+                : activeOption === 'orgs' ? (organizations.length)
+                    : activeOption === 'locs' ? (locals.length) : (foundations.length);
+            return result
+        });
+    });
+
+    useEffect( () => {
+        const newCurrentArray = (activeOption === 'funds' ? foundations
+            :
+            activeOption === 'orgs' ? organizations
+                :
+                activeOption === 'locs' ? locals
+                    : null);
+        setCurrentList(newCurrentArray);
+        setActivePage(1);
+    },[activeOption]);
+
+    useEffect( () => {
+        const newDisplayArray = (currentList.length < 3 ? currentList
+            :
+            activePage == 1 ? currentList.slice(0,3)
+                :
+                activePage ==2 ? currentList.slice(3,6)
+                    : activePage == 3 ? currentList.slice(6,9) : null);
+        setDisplayList(newDisplayArray)
+    }, [activePage, currentList])
+
+
+    const handlePageChange = (pageNumber) => {
+        console.log(`active page is ${pageNumber}`);
+        setActivePage(pageNumber);
+    };
+
 
     return (
         <div className='home__options-list'>
-
             <section className='options-list container'>
-                <div className='row list__row'>
-                    <div className='col-6 list__col'>
-                        <h4 className='list__title'>
-                            Fundacja “Dbam o Zdrowie”
-                        </h4>
-                        <p className='list__text'>
-                            Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.
-                        </p>
-                    </div>
-                    <div className='col-6 list__col list__col--right'>
-                        <p className='list__text list__text--right'>
-                            ubrania, jedzenie, sprzęt AGD, meble, zabawki
-                        </p>
-                    </div>
-                </div>
-                <div className='row list__row'>
-                    <div className='col-6 list__col'>
-                        <h4 className='list__title'>
-                            Fundacja “Dla dzieci”
-                        </h4>
-                        <p className='list__text'>
-                            Cel i misja: Pomoc dzieciom z ubogich rodzin.
-                        </p>
-                    </div>
-                    <div className='col-6 list__col list__col--right'>
-                        <p className='list__text list__text--right'>
-                            ubrania, meble, zabawki
-                        </p>
-                    </div>
-                </div>
-                <div className='row list__row'>
-                    <div className='col-6 list__col'>
-                        <h4 className='list__title'>
-                            Fundacja “Bez domu”
-                        </h4>
-                        <p className='list__text'>
-                            Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.
-                        </p>
-                    </div>
-                    <div className='col-6 list__col list__col--right'>
-                        <p className='list__text list__text--right'>
-                            ubrania, jedzenie, ciepłe koce
-                        </p>
-                    </div>
-                </div>
 
-                <div className='row list__row'>
-                    <div className='col-6 list__col'>
-                        <h4 className='list__title'>
-                            Fundacja “We care”
-                        </h4>
-                        <p className='list__text'>
-                            Cel i misja: Pomoc osobom znajdującym się w trudnej sytuacji życiowej.
-                        </p>
-                    </div>
-                    <div className='col-6 list__col list__col--right'>
-                        <p className='list__text list__text--right'>
-                            ubrania, jedzenie, meble, zabawki
-                        </p>
-                    </div>
-                </div>
-                <div className='row list__row'>
-                    <div className='col-6 list__col'>
-                        <h4 className='list__title'>
-                            Fundacja “For kids”
-                        </h4>
-                        <p className='list__text'>
-                            Cel i misja: Pomoc dzieciom z ubogich rodzin.
-                        </p>
-                    </div>
-                    <div className='col-6 list__col list__col--right'>
-                        <p className='list__text list__text--right'>
-                            ubrania, meble, zabawki
-                        </p>
-                    </div>
-                </div>
-                <div className='row list__row'>
-                    <div className='col-6 list__col'>
-                        <h4 className='list__title'>
-                            Fundacja “Homeless”
-                        </h4>
-                        <p className='list__text'>
-                            Cel i misja: Pomoc dla osób nie posiadających miejsca zamieszkania.
-                        </p>
-                    </div>
-                    <div className='col-6 list__col list__col--right'>
-                        <p className='list__text list__text--right'>
-                            ubrania, jedzenie, ciepłe koce
-                        </p>
-                    </div>
-                </div>
+                {displayList.map( list => {
+                    return (
+                        <HomeOptionsListItem key={list.id}
+                                             name={list.name}
+                                             goal={list.goal}
+                                             items={list.items}
+                        />
+                    )
+                })}
 
 
-                <div className='row list__row'>
-                    <div className='col-6 list__col'>
-                        <h4 className='list__title'>
-                            Fundacja “Na pomoc psom i kotom”
-                        </h4>
-                        <p className='list__text'>
-                            Cel i misja: Pomoc psom i kotom.
-                        </p>
-                    </div>
-                    <div className='col-6 list__col list__col--right'>
-                        <p className='list__text list__text--right'>
-                            akcesoria, karma, zabawki, koce
-                        </p>
-                    </div>
-                </div>
-                <div className='row list__row'>
-                    <div className='col-6 list__col'>
-                        <h4 className='list__title'>
-                            Fundacja “Na pomoc koniom”
-                        </h4>
-                        <p className='list__text'>
-                            Cel i misja: Pomoc koniom.
-                        </p>
-                    </div>
-                    <div className='col-6 list__col list__col--right'>
-                        <p className='list__text list__text--right'>
-                            akcesoria, karma, siano, derki
-                        </p>
-                    </div>
-                </div>
-                <div className='row list__row'>
-                    <div className='col-6 list__col'>
-                        <h4 className='list__title'>
-                            Fundacja “Na pomoc gryzoniom”
-                        </h4>
-                        <p className='list__text'>
-                            Cel i misja: Pomoc dla gryzoni.
-                        </p>
-                    </div>
-                    <div className='col-6 list__col list__col--right'>
-                        <p className='list__text list__text--right'>
-                            akcesoria, karma, sianko
-                        </p>
-                    </div>
-                </div>
 
                 <div className='row list__row list__row--pagination'>
-                    <Pagination size="sm" aria-label="Options navigation" className='options__pagination'>
+                    <PaginationOld size="sm" aria-label="Options navigation" className='options__pagination'>
                         <PaginationItem active className='options__pagination-item'>
                             <PaginationLink href="#" className='options__pagination-link'>
                                 1
@@ -163,7 +88,17 @@ const HomeOptionsList = () => {
                                 3
                             </PaginationLink>
                         </PaginationItem>
-                    </Pagination>
+                    </PaginationOld>
+                </div>
+                <div>
+                    <Pagination
+                        hideNavigation
+                        hideFirstLastPages
+                        activePage={activePage}
+                        itemsCountPerPage={3}
+                        totalItemsCount={totalItems}
+                        onChange={handlePageChange}
+                    />
                 </div>
             </section>
 
