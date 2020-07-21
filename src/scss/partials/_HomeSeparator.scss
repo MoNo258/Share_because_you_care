@@ -1,0 +1,20 @@
+.home__separator{
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.separator{}
+.separator__title{
+  font-size: 38px;
+  margin-bottom: 26px;
+}
+.separator__decoration{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.separator__image{}

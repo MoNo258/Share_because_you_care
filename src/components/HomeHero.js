@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import heroImage from '../assets/Home-Hero-Image.jpg';
+import heroSeparator from '../assets/Decoration.svg'
 
 const HomeHero = ({id}) => {
 
@@ -15,9 +16,12 @@ const HomeHero = ({id}) => {
                         <h3 className='hero__title hero__title--first'>
                             Zacznij pomagać!
                         </h3>
-                            <h3 className='hero__title hero__title--second'>
+                        <h3 className='hero__title hero__title--second'>
                             Oddaj niechiane rzeczy w zaufane ręce
                         </h3>
+                        <p className='hero__title--separator'>
+                            <img src={heroSeparator} alt="separator"/>
+                        </p>
                         <ul className='hero__list'>
                             <li className='list__item'>
                                 <Link to='/logowanie' className='btn btn-lg list__btn'>Oddaj rzeczy</Link>
@@ -32,6 +36,5 @@ const HomeHero = ({id}) => {
         </div>
     )
 };
-
 
 export default HomeHero;

@@ -2,7 +2,6 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import {Link as LinkScroll } from "react-scroll";
 
-
 const HomeHeader = () => {
 
     return (
@@ -20,7 +19,7 @@ const HomeHeader = () => {
                     <LinkScroll activeClass='active' to="HomeHero" spy={true} smooth={true} offset={0} duration={500} className='nav-link' >Start</LinkScroll>
                 </li>
                 <li className='nav-item'>
-                    <LinkScroll activeClass='active' to="HomeThreeColumns" spy={true} smooth={true} offset={0} duration={500}className='nav-link' >O co chodzi?</LinkScroll>
+                    <LinkScroll activeClass='active' to="SeparatorFour" spy={true} smooth={true} offset={0} duration={500}className='nav-link' >O co chodzi?</LinkScroll>
                 </li>
                 <li className='nav-item'>
                     <LinkScroll activeClass='active' to="HomeAboutUs" spy={true} smooth={true} offset={0} duration={500}className='nav-link' >O nas</LinkScroll>
@@ -35,6 +34,5 @@ const HomeHeader = () => {
         </section>
     )
 };
-
 
 export default HomeHeader;

@@ -1,13 +1,11 @@
 import React from 'react';
 
 
-const HomeThreeColumns = ({id}) => {
+const HomeThreeColumns = () => {
 
     return (
         <div className='home__three-columns'>
-
-
-            <section className='three-columns container-sm' id={id}>
+            <section className='three-columns container-sm' >
                 <div className='row three-columns__row'>
                     <div className='col-sm-12 col-md-4 three-columns__card'>
                         <h2 className='card__title'>
@@ -44,7 +42,6 @@ const HomeThreeColumns = ({id}) => {
                     </div>
                 </div>
             </section>
-
         </div>
     )
 };
