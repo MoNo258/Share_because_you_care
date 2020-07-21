@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const HomeOptions = () => {
 
     return (
@@ -33,6 +32,5 @@ const HomeOptions = () => {
         </div>
     )
 };
-
 
 export default HomeOptions;
