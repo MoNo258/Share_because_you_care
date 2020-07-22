@@ -1,0 +1,130 @@
+@import "../settings/variables";
+@use "sass:color";
+
+.home__contact{
+  width: 100%;
+  height: 950px;
+  background: url("/assets/Background-Contact-Form.jpg");
+  z-index: 0;
+  position: relative;
+  &:before{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.79);
+  }
+}
+.contact{
+  height: 100%;
+  width: 100%;
+}
+.row {}
+.contact__row{
+  height: 100%;
+  width: 100%;
+}
+.col-lg-8 {}
+.col-12 {}
+.contact__col{
+  height: 100%;
+  width: 100%;
+}
+.col-lg-4 {}
+.col-12 {}
+.contact__right{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.right__title{
+  width: 100%;
+  font-size: 38px;
+  text-align: center;
+  color: $color-dark-grey;
+  margin-bottom: 30px;
+}
+.right__separator{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 70px;
+}
+.right__image{}
+.contact-form {
+  width: 100%;
+  max-height: 330px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.form{}
+.row {}
+.form__row{}
+.form__col--button{
+  display: flex;
+  justify-content: flex-end;
+}
+.col-6 {}
+.form__col{}
+.form__label{
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 10px;
+
+
+  width: 100%;
+}
+.form__label--textarea{
+  margin-top: 40px;
+}
+.form__text {}
+.form__textarea{
+  height: 100px;
+  //display: flex;
+  //justify-content: flex-start;
+  //align-items: flex-start;
+  //text-align: left;
+  //overflow-wrap: normal;
+  white-space: pre-line;
+  text-wrap: normal;
+  &::placeholder{
+    //text-wrap: wrap;
+    //text-align: left;
+    //overflow-wrap: normal;
+    white-space:pre-line;
+    position:relative;
+    top:-40%;
+  }
+}
+.form__input{
+  font-size: 18px;
+  color: $color-dark-grey;
+  background-color: #FEFEFE;
+  border: 1px solid transparent;
+  border-bottom: 1px solid #707070;
+  outline: none;
+  width: 100%;
+  &:focus{
+    border: 1px solid #707070
+  }
+  &::placeholder{
+    color: lighten($color-dark-grey, 65%);
+  }
+}
+.form__email {}
+.col-12 {}
+.form__button{
+  //display: flex;
+  //justify-content: flex-end;
+  height: 50px;
+  width: 150px;
+  background-color: #FEFEFE;
+  font-size: 18px;
+  border: 0.75px solid $color-dark-grey;
+  margin-top: 40px;
+
+}
