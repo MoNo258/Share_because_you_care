@@ -1,6 +1,7 @@
 @import "./generic/reset";
 @import "./settings/variables";
 @import "./settings/mixins";
+@import "./partials/Home";
 @import "./partials/HomeHeader";
 @import "./partials/HomeHero";
 @import "./partials/HomeThreeColumns";
@@ -11,6 +12,8 @@
 @import "./partials/HomeOptions";
 @import "./partials/HomeOptionsList";
 @import "./partials/HomeOptionsListItem";
+@import "./partials/HomeContacUs";
+@import "./partials/HomeFooter";
 
 body {
   font-family: $font-base;

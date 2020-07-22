@@ -28,7 +28,7 @@ const HomeHeader = () => {
                     <LinkScroll activeClass='active' to="SeparatorOptions" spy={true} smooth={true} offset={1} duration={500}className='nav-link' >Fundacja i organizacje</LinkScroll>
                 </li>
                 <li className='nav-item'>
-                    <LinkScroll activeClass='active' to="HomeContactUs" spy={true} smooth={true} offset={0} duration={500}className='nav-link' >Kontakt</LinkScroll>
+                    <LinkScroll activeClass='active' to="HomeContactUs" spy={true} smooth={true} offset={40} duration={500}className='nav-link' >Kontakt</LinkScroll>
                 </li>
             </ul>
         </section>

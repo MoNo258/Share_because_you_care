@@ -11,8 +11,8 @@ const HomeOptionsList = ({option}) => {
     const [totalItems, setTotalItems] = useState(1);
     const [currentList, setCurrentList] = useState([]);
     const [displayList, setDisplayList] = useState(currentList);
-    const [itemsPerPage, setItemsPerPage] = useState(3);
 
+    const itemsPerPage = 3;
 
     useEffect(() => {
         setActiveOption(option);
@@ -23,7 +23,7 @@ const HomeOptionsList = ({option}) => {
                     : activeOption === 'locs' ? (locals.length) : (foundations.length);
             return result
         });
-    });
+    },[option, activeOption]);
 
     useEffect(() => {
         const newCurrentArray = (activeOption === 'funds' ? foundations
@@ -91,7 +91,6 @@ const HomeOptionsList = ({option}) => {
                     }
                 </div>
             </section>
-
         </div>
     )
 };
