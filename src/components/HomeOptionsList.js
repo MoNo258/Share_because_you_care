@@ -1,11 +1,9 @@
 import React, {useState, useEffect} from 'react';
-import {Pagination as PaginationOld, PaginationItem, PaginationLink} from 'reactstrap';
 import Pagination from "react-js-pagination";
 import HomeOptionsListItem from "./HomeOptionsListItem";
 import foundations from "../data/foundations";
 import organizations from "../data/organizations";
 import locals from "../data/locals";
-// import {OptionsPagination} from "./OptionsPagination";
 
 const HomeOptionsList = ({option}) => {
     const [activePage, setActivePage] = useState(1);
@@ -13,6 +11,7 @@ const HomeOptionsList = ({option}) => {
     const [totalItems, setTotalItems] = useState(1);
     const [currentList, setCurrentList] = useState([]);
     const [displayList, setDisplayList] = useState(currentList);
+    const [itemsPerPage, setItemsPerPage] = useState(3);
 
 
     useEffect(() => {
@@ -26,7 +25,7 @@ const HomeOptionsList = ({option}) => {
         });
     });
 
-    useEffect( () => {
+    useEffect(() => {
         const newCurrentArray = (activeOption === 'funds' ? foundations
             :
             activeOption === 'orgs' ? organizations
@@ -35,18 +34,28 @@ const HomeOptionsList = ({option}) => {
                     : null);
         setCurrentList(newCurrentArray);
         setActivePage(1);
-    },[activeOption]);
+    }, [activeOption]);
 
-    useEffect( () => {
-        const newDisplayArray = (currentList.length < 3 ? currentList
+    // useEffect( () => {
+    //     let newDisplayArray;
+    //     for(let i =1; i<= totalItems/itemsPerPage; i++ ){
+    //         (currentList.length <= itemsPerPage ? newDisplayArray.concat(currentList)
+    //             :
+    //             newDisplayArray.concat(currentList.slice( ((itemsPerPage*i) - itemsPerPage), itemsPerPage*i)) )
+    //     }
+    //     setDisplayList(newDisplayArray)
+    // }, [activePage, currentList,itemsPerPage,totalItems]);
+
+    useEffect(() => {
+        const newDisplayArray = (currentList.length <= itemsPerPage ? currentList
             :
-            activePage == 1 ? currentList.slice(0,3)
+            activePage === 1 ? currentList.slice(0, itemsPerPage)
                 :
-                activePage ==2 ? currentList.slice(3,6)
-                    : activePage == 3 ? currentList.slice(6,9) : null);
+                activePage === 2 ? currentList.slice(itemsPerPage, itemsPerPage * 2)
+                    :
+                    activePage === 3 ? currentList.slice(itemsPerPage * 2, itemsPerPage * 3) : null);
         setDisplayList(newDisplayArray)
-    }, [activePage, currentList])
-
+    }, [activePage, currentList, itemsPerPage]);
 
     const handlePageChange = (pageNumber) => {
         console.log(`active page is ${pageNumber}`);
@@ -57,8 +66,7 @@ const HomeOptionsList = ({option}) => {
     return (
         <div className='home__options-list'>
             <section className='options-list container'>
-
-                {displayList.map( list => {
+                {displayList.map(list => {
                     return (
                         <HomeOptionsListItem key={list.id}
                                              name={list.name}
@@ -68,15 +76,19 @@ const HomeOptionsList = ({option}) => {
                     )
                 })}
 
-                <div className='row list__row list__row--pagination'>
-                    <Pagination className=' options__pagination-item options__pagination-link'
-                        hideNavigation
-                        hideFirstLastPages
-                        activePage={activePage}
-                        itemsCountPerPage={3}
-                        totalItemsCount={totalItems}
-                        onChange={handlePageChange}
-                    />
+                <div className='row list__row--pagination'>
+                    {totalItems / itemsPerPage !== 1 ?
+                        <Pagination className=' options__pagination-item options__pagination-link'
+                                    hideNavigation
+                                    hideFirstLastPages
+                                    activePage={activePage}
+                                    itemsCountPerPage={itemsPerPage}
+                                    totalItemsCount={totalItems}
+                                    onChange={handlePageChange}
+                        />
+                        :
+                        <div className=' options__pagination-item'></div>
+                    }
                 </div>
             </section>
 
