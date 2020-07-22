@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import HomeOptionsList from "./HomeOptionsList";
 
 const HomeOptions = () => {
@@ -14,25 +14,16 @@ const HomeOptions = () => {
                 <section className='options'>
                     <div className='row options__row'>
                         <div className='col-3 options__card'>
-                            {/*<h3 className='options__title '>*/}
-                            {/*    Fundacjom*/}
-                            {/*</h3>*/}
                             <button className='options__button ' value='funds' onClick={handleClick}>
                                 Fundacjom
                             </button>
                         </div>
                         <div className='col-3 options__card'>
-                            {/*<h3 className='options__title'>*/}
-                            {/*    Organizacjom pozarządowym*/}
-                            {/*</h3>*/}
                             <button className='options__button' value='orgs' onClick={handleClick}>
                                 Organizacjom pozarządowym
                             </button>
                         </div>
                         <div className='col-3 options__card'>
-                            {/*<h3 className='options__title'>*/}
-                            {/*    Lokalnym zbiórkom*/}
-                            {/*</h3>*/}
                             <button className='options__button' value='locs' onClick={handleClick} >
                                 Lokalnym zbiórkom
                             </button>
@@ -46,11 +37,8 @@ const HomeOptions = () => {
                     </div>
                 </section>
             </div>
-
             <HomeOptionsList option={activeOption}/>
-
         </>
-
     )
 };
 

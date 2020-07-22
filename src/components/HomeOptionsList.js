@@ -9,7 +9,6 @@ import locals from "../data/locals";
 
 const HomeOptionsList = ({option}) => {
     const [activePage, setActivePage] = useState(1);
-    // const [activeOption, setActiveOption] = useState('funds');
     const [activeOption, setActiveOption] = useState('funds');
     const [totalItems, setTotalItems] = useState(1);
     const [currentList, setCurrentList] = useState([]);
@@ -69,29 +68,8 @@ const HomeOptionsList = ({option}) => {
                     )
                 })}
 
-
-
                 <div className='row list__row list__row--pagination'>
-                    <PaginationOld size="sm" aria-label="Options navigation" className='options__pagination'>
-                        <PaginationItem active className='options__pagination-item'>
-                            <PaginationLink href="#" className='options__pagination-link'>
-                                1
-                            </PaginationLink>
-                        </PaginationItem>
-                        <PaginationItem className='options__pagination-item'>
-                            <PaginationLink href="#" className='options__pagination-link'>
-                                2
-                            </PaginationLink>
-                        </PaginationItem>
-                        <PaginationItem className='options__pagination-item'>
-                            <PaginationLink href="#" className='options__pagination-link'>
-                                3
-                            </PaginationLink>
-                        </PaginationItem>
-                    </PaginationOld>
-                </div>
-                <div>
-                    <Pagination
+                    <Pagination className=' options__pagination-item options__pagination-link'
                         hideNavigation
                         hideFirstLastPages
                         activePage={activePage}
