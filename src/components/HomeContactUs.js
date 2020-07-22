@@ -1,17 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import separatorImg from "../assets/Decoration.svg";
 
-
 const HomeContactUs = ({id}) => {
-
 
     const handleSubmit = (e) => {
         e.preventDefault();
     };
 
     return (
-        <div className='home__contact'>
-            <section id={id} className='contact'>
+        <div className='home__contact '>
+            <section id={id} className='contact container-fluid'>
                 <div className='row contact__row'>
                     <div className='col-lg-8 col-12 contact__col'></div>
                     <div className='col-lg-4 col-12 contact__col'>
@@ -45,7 +43,7 @@ const HomeContactUs = ({id}) => {
                                         <input type="textarea" id='mssg' name='mssg' cols='30' rows='4'
                                                className='form__textarea form__input'
                                                placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
-                                               
+
                                             // value='mssg'
                                         />
                                     </div>
