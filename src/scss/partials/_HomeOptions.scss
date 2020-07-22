@@ -1,0 +1,49 @@
+@import "../settings/variables";
+.home__options{
+  height: 310px;
+  width: 100%;
+}
+.options{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.row{}
+.options__row{
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.col-3{}
+.options__card{
+  text-align: center;
+  font-size: 22px;
+  color: $color-dark-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 30px;
+}
+.options__button {
+  background: #fff;
+  font-size: 24px;
+  height: 80px;
+  width: 210px;
+  color: $color-dark-grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.75px solid transparent;
+  &:hover{
+       border: 0.75px solid $color-dark-grey;
+       cursor: pointer;
+     }
+  &:active{
+    border: 0.75px solid $color-dark-grey;
+  }
+}

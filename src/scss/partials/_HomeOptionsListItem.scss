@@ -1,0 +1,42 @@
+@import "../settings/variables";
+.row{}
+.list__row{
+  width: 100%;
+  height: 81px;
+  border-bottom: 0.75px solid $color-dark-grey;
+  margin-bottom: 34px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.col-6{}
+.list__col{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 0;
+}
+.list__col--right{
+  align-items: flex-end;
+  justify-content: center;
+}
+.list__title{
+  font-family: $font-alt;
+  font-size: 26px;
+  font-size: 22px;
+  font-weight: lighter;
+  color: $color-dark-grey;
+  margin-bottom: 6px;
+}
+.list__text{
+  font-family: $font-alt;
+  font-size: 18px;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+  color: $color-dark-grey;
+}
+.list__text--right{
+  font-style: normal;
+}

@@ -1,0 +1,41 @@
+@import "../settings/variables";
+.home__options-list{
+  height: 460px;
+  height: 100vh;
+  width: 100%;
+  margin-top: 66px;
+}
+.options-list{
+  height: 100%;
+  width: 100%;
+}
+.container{
+  max-width: 80%;
+}
+.list__row--pagination{
+  border: none;
+  .options__pagination-link,
+  a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 18px;
+    color: $color-dark-grey;
+    padding: 0;
+    width: 40px;
+    height: 50px;
+    border: 1px solid transparent;
+    margin: 10px;
+    &:hover{
+      background: #fff;
+      border: 1px solid #707070;
+      text-decoration: none;
+      color: $color-dark-grey;;
+    }
+    &:active{
+      background: #fff;
+      border: 1px solid #707070;
+    }
+  }
+}
