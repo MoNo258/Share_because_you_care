@@ -13,20 +13,24 @@ const HomeContactUs = ({id}) => {
     const [errorName, setErrorName] = useState(null);
     const [errorEmail, setErrorEmail] = useState(null);
     const [errorMssg, setErrorMssg] = useState(null);
-    const [mssgSuccess, setMssgSuccess] = useState(null);
+    const [statusSuccess, setStatusSuccess] = useState(null);
+    const [statusError, setStatusError] = useState(null);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         sendForm();
-        setMssgSuccess(true);
-        setName('');
-        setEmail('');
-        setMssg('');
-        setFullMessage({
-            name: '',
-            email: '',
-            message: ''
-        });
+        // setTimeout( () => {
+        //     setStatusSuccess(null);
+        //     setStatusError(null);
+        // },7000);
+        // setName('');
+        // setEmail('');
+        // setMssg('');
+        // setFullMessage({
+        //     name: '',
+        //     email: '',
+        //     message: ''
+        // });
     };
 
     const sendForm = () => {
@@ -38,7 +42,30 @@ const HomeContactUs = ({id}) => {
             body: JSON.stringify(fullMessage)
         })
             .then( resp => resp.json())
-            .then( data => console.log(data))
+            .then( data =>  {
+                if (data.status === 'success') {
+                    setStatusSuccess(true)
+                } else if (data.status === 'error') {
+                    setStatusError(`Błedny parametr: ${data.errors[0].param}.`);
+                    throw new Error('error')
+                }
+            })
+            .then ( () => {
+                setName('');
+                setEmail('');
+                setMssg('');
+                setFullMessage({
+                    name: '',
+                    email: '',
+                    message: ''
+                });
+            })
+            .then( () => {
+                setTimeout( () => {
+                    setStatusSuccess(null);
+                    setStatusError(null);
+                },7000);
+            })
             .catch( error => console.log(error));
     };
 
@@ -47,7 +74,7 @@ const HomeContactUs = ({id}) => {
             setErrorName('Podane imię jest nieprawidłowe!')
         } else {setErrorName(null)}
 
-        // RFC 2822 short
+        // regular expression used based on standard RFC 2822 but shorter version
         if ( email.length > 0 && !email.match(`[a-z0-9!#$%&'*+/=?^_\`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?`) ) {
             setErrorEmail('Podany email jest nieprawidłowy!')
         } else {setErrorEmail(null)}
@@ -55,9 +82,6 @@ const HomeContactUs = ({id}) => {
         if (mssg.length > 0 && mssg.length < 120 ) {
             setErrorMssg('Wiadomość musi mieć co najmniej 120 znaków!')
         } else {setErrorMssg(null)}
-        // 120:
-        // Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        // Ut aliquet feugiat lacinia. Phasellus id rutrum risus. Donecda.
 
         setFullMessage({
             name: name,
@@ -80,7 +104,7 @@ const HomeContactUs = ({id}) => {
                             <div className='right__separator'>
                                 <img src={separatorImg} alt="separator" className='right__image'/>
                             </div>
-                            { mssgSuccess
+                            { statusSuccess
                                 ?
                                 <div className='success-message'>
                                     <p>
@@ -91,6 +115,17 @@ const HomeContactUs = ({id}) => {
                                     </p>
                                 </div>
                                 :
+                                statusError
+                                ?
+                                    <div className='error-message'>
+                                        <p>
+                                            Błąd wysłania formularza!
+                                        </p>
+                                        <p>
+                                            {statusError}
+                                        </p>
+                                    </div>
+                                    :
                                 <div className='empty-div--success'></div>
                             }
                             <form className='contact-form form' onSubmit={handleSubmit}>
@@ -104,7 +139,7 @@ const HomeContactUs = ({id}) => {
                                         />
                                         { errorName
                                             ?
-                                            <p className='error-message'>
+                                            <p className='error-info'>
                                                 {errorName}
                                             </p>
                                             :
@@ -120,7 +155,7 @@ const HomeContactUs = ({id}) => {
                                         />
                                         { errorEmail
                                             ?
-                                            <p className='error-message'>
+                                            <p className='error-info'>
                                                 {errorEmail}
                                             </p>
                                             :
@@ -139,7 +174,7 @@ const HomeContactUs = ({id}) => {
                                         />
                                         { errorMssg
                                             ?
-                                            <p className='error-message'>
+                                            <p className='error-info'>
                                                 {errorMssg}
                                             </p>
                                             :

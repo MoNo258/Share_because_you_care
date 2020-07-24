@@ -10,6 +10,7 @@ project currently in progress
 * React Router
 * Bootstrap, Sass
 * `react-js-pagination`
+* API
 
 ### Available Scripts
 
