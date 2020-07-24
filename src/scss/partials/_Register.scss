@@ -23,6 +23,9 @@
   background: #F2F3F3;
   background: $color-lighter-grey;
   padding: 0 40px;
+  &:nth-of-type(3){
+    padding-bottom: 40px;
+  }
 }
 .register-form__col{}
 .register-form__label{}
@@ -37,15 +40,9 @@
   margin-top: 20px;
   margin-bottom: 10px;
 }
-.register-form__email{
-  margin-bottom: 20px;
-}
-.register-form__password{
-  margin-bottom: 20px;
-}
-.register-form__passwordRepeat{
-  margin-bottom: 40px;
-}
+.register-form__email{}
+.register-form__password{}
+.register-form__passwordRepeat{}
 .register-form__row--button{
   width: 100%;
   display: flex;
@@ -68,3 +65,10 @@
   }
 }
 .register-form__button--right{}
+.register-error-info{
+  padding-top: 0;
+}
+.register-empty-div--error{
+  padding-top: 10.5px;
+  border: 1.25px solid transparent;
+}
