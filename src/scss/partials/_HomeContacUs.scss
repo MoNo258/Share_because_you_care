@@ -50,14 +50,24 @@
 .right__separator{
   width: 100%;
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 .right__image{}
 .success-message{
   font-size: 18px;
   font-weight: bold;
   color: #2D9E22;
-  margin-bottom: 36px;
+  margin-bottom: 30px;
+  p{
+    margin-bottom: 4px;
+  }
+}
+.error-message{
+  text-align: center;
+  font-size: 18px;
+  font-weight: bold;
+  color: #FB5252;
+  margin-bottom: 30px;
   p{
     margin-bottom: 4px;
   }
@@ -65,7 +75,7 @@
 .empty-div--success{
   font-size: 18px;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 60px;
 }
 .contact-form {
   width: 100%;
@@ -127,7 +137,7 @@
     color: lighten($color-dark-grey, 65%);
   }
 }
-.error-message{
+.error-info{
   font-size: 10.5px;
   font-weight: bold;
   color: #FB5252;
