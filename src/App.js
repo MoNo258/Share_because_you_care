@@ -4,6 +4,7 @@ import {HashRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "../src/components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import Logout from "./components/Logout"
 
 const history = createBrowserHistory();
 
@@ -16,7 +17,7 @@ function App() {
                   {/*<Route path='/oddaj-rzeczy' component={Form} />*/}
                   <Route path='/logowanie' component={Login} />
                   <Route path='/rejestracja' component={Register} />
-                  {/*<Route path='/wylogowano' component={Logout} />*/}
+                  <Route path='/wylogowano' component={Logout} />
               </Switch>
           </Router>
       </>
