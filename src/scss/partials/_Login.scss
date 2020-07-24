@@ -22,12 +22,15 @@
   background: #F2F3F3;
   background: $color-lighter-grey;
   padding: 0 40px;
+  &:nth-of-type(2){
+    padding-bottom: 40px;
+  }
 }
 .login-form__col{}
 .login-form__label{}
 .login-form__text{}
 .login-form__input{
-  background: $color-lighter-grey;;
+  background: $color-lighter-grey;
 }
 .login-form__label--email{
   margin-top: 40px;
@@ -37,10 +40,10 @@
   margin-bottom: 10px;
 }
 .login-form__email{
-  margin-bottom: 20px;
+  //margin-bottom: 20px;
 }
 .login-form__password{
-  margin-bottom: 40px;
+  //margin-bottom: 40px;
 }
 .login-form__row--button{
   width: 100%;
@@ -64,3 +67,11 @@
   }
 }
 .login-form__button--right{}
+
+.login-error-info{
+  padding-top: 0;
+}
+.login-empty-div--error{
+  padding-top: 10.5px;
+  border: 1.25px solid transparent;
+}
