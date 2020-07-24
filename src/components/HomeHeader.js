@@ -13,6 +13,9 @@ const HomeHeader = () => {
                 <li className='nav-item'>
                     <Link className='nav-link' to='/rejestracja'>Załóż konto</Link>
                 </li>
+                <li className='nav-item'>
+                    <Link className='nav-link' to='/wylogowano'>Wyloguj</Link>
+                </li>
             </ul>
             <ul className='nav justify-content-end nav--second'>
                 <li className='nav-item'>

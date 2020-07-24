@@ -1,0 +1,53 @@
+@import "../settings/variables";
+
+.logout {
+  height: calc(100vh - 37px);
+  width: 100%;
+}
+#logout__separator {
+  margin-top: 50px;
+  margin-bottom: 20px;
+  width: 30%;
+  text-align: center;
+  line-height: 50px;
+}
+.logout__section {
+  height: 70%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.logout-form__row--button {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.logout-form__col{
+  display: flex;
+  justify-content: center;
+}
+.logout-form__button {
+  width: 200px;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.75px solid $color-dark-grey;
+  padding: 10px 20px;
+  color: $color-dark-grey;
+  &:hover {
+    color: $color-dark-grey;
+    border: 0.75px solid $color-dark-grey;
+  }
+}
+
+
+
+
+.logout-form__row--button{
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
