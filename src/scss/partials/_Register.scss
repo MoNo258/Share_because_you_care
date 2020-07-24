@@ -1,13 +1,14 @@
 @import "../settings/variables";
 
-.login{
+.register{
   height: calc(100vh - 37px);
   width: 100%;
 }
-#login__separator{
-    text-align: center;
+#register__separator{
+  text-align: center;
+  margin-bottom: 50px;
 }
-.login__section{
+.register__section{
   height: 70%;
   width: 100%;
   display: flex;
@@ -15,39 +16,42 @@
   align-items: center;
   flex-direction: column;
 }
-.login-form{
+.register-form{
   width: 30%;
 }
-.login-form__row--input{
+.register-form__row--input{
   background: #F2F3F3;
   background: $color-lighter-grey;
   padding: 0 40px;
 }
-.login-form__col{}
-.login-form__label{}
-.login-form__text{}
-.login-form__input{
+.register-form__col{}
+.register-form__label{}
+.register-form__text{}
+.register-form__input{
   background: $color-lighter-grey;;
 }
-.login-form__label--email{
+.register-form__label--email{
   margin-top: 40px;
 }
-.login-form__label--psswrd{
+.register-form__label--psswrd{
   margin-top: 20px;
   margin-bottom: 10px;
 }
-.login-form__email{
+.register-form__email{
   margin-bottom: 20px;
 }
-.login-form__password{
+.register-form__password{
+  margin-bottom: 20px;
+}
+.register-form__passwordRepeat{
   margin-bottom: 40px;
 }
-.login-form__row--button{
+.register-form__row--button{
   width: 100%;
   display: flex;
   justify-content: center;
 }
-.login-form__button{
+.register-form__button{
   margin-top: 30px;
   display: flex;
   justify-content: center;
@@ -55,7 +59,7 @@
   border: 0.75px solid $color-dark-grey;
   padding: 10px 20px;
 }
-.login-form__button--left{
+.register-form__button--left{
   color: $color-dark-grey;
   border: 0.75px solid transparent;
   &:hover{
@@ -63,4 +67,4 @@
     border: 0.75px solid $color-dark-grey;;
   }
 }
-.login-form__button--right{}
+.register-form__button--right{}
