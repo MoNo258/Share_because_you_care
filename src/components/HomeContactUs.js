@@ -44,8 +44,10 @@ const HomeContactUs = ({id}) => {
             .then( resp => resp.json())
             .then( data =>  {
                 if (data.status === 'success') {
+                    console.log(data.status);
                     setStatusSuccess(true)
                 } else if (data.status === 'error') {
+                    console.log(data.status);
                     setStatusError(`Błedny parametr: ${data.errors[0].param}.`);
                     throw new Error('error')
                 }
