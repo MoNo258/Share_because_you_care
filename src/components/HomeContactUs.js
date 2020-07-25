@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
-import separatorImg from "../assets/Decoration.svg";
+import separatorImg from '../assets/Decoration.svg';
+import backgroundContactUs from '../assets/Background-Contact-Form.jpg';
 
 const HomeContactUs = ({id}) => {
     const [name, setName] = useState('');
@@ -16,21 +17,13 @@ const HomeContactUs = ({id}) => {
     const [statusSuccess, setStatusSuccess] = useState(null);
     const [statusError, setStatusError] = useState(null);
 
+    const styleBackground = {
+        backgroundImage: 'url(' + backgroundContactUs + ')'
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         sendForm();
-        // setTimeout( () => {
-        //     setStatusSuccess(null);
-        //     setStatusError(null);
-        // },7000);
-        // setName('');
-        // setEmail('');
-        // setMssg('');
-        // setFullMessage({
-        //     name: '',
-        //     email: '',
-        //     message: ''
-        // });
     };
 
     const sendForm = () => {
@@ -45,11 +38,11 @@ const HomeContactUs = ({id}) => {
             .then( data =>  {
                 if (data.status === 'success') {
                     console.log(data.status);
-                    setStatusSuccess(true)
+                    setStatusSuccess(true);
                 } else if (data.status === 'error') {
                     console.log(data.status);
                     setStatusError(`Błedny parametr: ${data.errors[0].param}.`);
-                    throw new Error('error')
+                    throw new Error('error');
                 }
             })
             .then ( () => {
@@ -77,7 +70,8 @@ const HomeContactUs = ({id}) => {
         } else {setErrorName(null)}
 
         // regular expression used based on standard RFC 2822 but shorter version
-        if ( email.length > 0 && !email.match(`[a-z0-9!#$%&'*+/=?^_\`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?`) ) {
+        if ( email.length > 0 &&
+            !email.match(`[a-z0-9!#$%&'*+/=?^_\`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_\`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?`) ) {
             setErrorEmail('Podany email jest nieprawidłowy!')
         } else {setErrorEmail(null)}
 
@@ -94,7 +88,7 @@ const HomeContactUs = ({id}) => {
     }, [name, email, mssg]);
 
     return (
-        <div className='home__contact '>
+        <div className='home__contact' style={styleBackground} >
             <section id={id} className='contact container-fluid'>
                 <div className='row contact__row'>
                     <div className='col-lg-8 col-12 contact__col'></div>
@@ -167,10 +161,12 @@ const HomeContactUs = ({id}) => {
                                 </div>
                                 <div className='row form__row'>
                                     <div className='col-12 form__col'>
-                                        <label htmlFor="mssg" className="form__label form__label--textarea">Wpisz swoją wiadomość</label>
-                                        <input type="textarea" id='mssg' name='mssg' cols='30' rows='4'
-                                               className='form__textarea form__input'
-                                               placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+                                        <label htmlFor="mssg" className="form__label form__label--textarea">
+                                            Wpisz swoją wiadomość
+                                        </label>
+                                        <textarea  id='mssg' name='mssg' cols='30' rows='4'
+                                               className='form__textarea2 form__input'
+                                               placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.'
                                                value={mssg}
                                                onChange={e => setMssg(e.target.value)}
                                         />
@@ -186,7 +182,7 @@ const HomeContactUs = ({id}) => {
                                 </div>
                                 <div className='row form__row'>
                                     <div className='col-12 form__col form__col--button'>
-                                        { (errorName || errorEmail || errorMssg || name==='' || email==='' || mssg==='' )
+                                        { (errorName || errorEmail || errorMssg || name==='' || email==='' || mssg==='')
                                         ?
                                             <button className="form__button" disabled={true}>Wyślij</button>
                                         :

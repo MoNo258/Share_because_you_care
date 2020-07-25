@@ -64,9 +64,10 @@
 }
 .login-form__button--right{}
 .login-error-info{
-  padding-top: 0;
+  padding-top: 3px;
 }
 .login-empty-div--error{
-  padding-top: 10.5px;
-  border: 1.25px solid transparent;
+  padding-top: 13.5px;
+  margin: -0.25px;
+  border: 1.0px solid transparent;
 }

@@ -1,10 +1,14 @@
 import React from 'react';
-
+import backgroundYellow from '../assets/3-Columns-Background.png';
 
 const HomeThreeColumns = () => {
 
+    const styleBackground = {
+        backgroundImage: 'url(' + backgroundYellow + ')'
+    };
+
     return (
-        <div className='home__three-columns'>
+        <div className='home__three-columns' style={styleBackground} >
             <section className='three-columns container-sm' >
                 <div className='row three-columns__row'>
                     <div className='col-sm-12 col-md-4 three-columns__card'>
