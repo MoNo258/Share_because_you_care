@@ -3,7 +3,6 @@ import {Link} from "react-router-dom";
 import {Link as LinkScroll } from "react-scroll";
 
 const HomeHeader = () => {
-
     return (
         <section className='home__header container-fluid'>
             <ul className='nav justify-content-end nav--first'>

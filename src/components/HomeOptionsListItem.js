@@ -1,8 +1,8 @@
 import React from 'react';
 
-const HomeOptionsListItem = ({name, goal, items}) =>{
+const HomeOptionsListItem = ({name, goal, items}) => {
 
-    return(
+    return (
         <div className='row list__row'>
             <div className='col-6 list__col'>
                 <h4 className='list__title'>
