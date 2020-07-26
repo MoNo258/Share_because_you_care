@@ -1,6 +1,6 @@
 import React  from 'react';
 import {createBrowserHistory} from "history";
-import {HashRouter as Router, Route, Switch} from "react-router-dom";
+import {HashRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 import Home from "../src/components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";

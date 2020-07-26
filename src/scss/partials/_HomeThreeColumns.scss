@@ -3,7 +3,8 @@
 .home__three-columns{
   width: 100%;
   height: 384px;
-  background: url("/assets/3-Columns-Background.png");
+  //below background works only for dev environment; not for production
+  //background: url("/assets/3-Columns-Background.png");
 }
 .three-columns{
   height: 100%;

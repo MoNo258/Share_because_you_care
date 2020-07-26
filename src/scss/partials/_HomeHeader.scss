@@ -24,6 +24,9 @@
 .nav--second {
   font-size: 18px;
   color: $color-dark-grey;
+  a{
+    color: $color-dark-grey;
+  }
   .nav-link{
     border: 0.75px solid transparent;
     &:active{

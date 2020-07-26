@@ -15,17 +15,17 @@ const Home = () => {
 
     return (
         <div className='home'>
-            <HomeHeader/>
-            <HomeHero id='HomeHero'/>
-            <HomeThreeColumns id='HomeThreeColumns'/>
-            <HomeSeparator id='SeparatorFour' text='Wystarczą 4 proste kroki'/>
-            <HomeFourColumns/>
-            <HomeShareStuff/>
-            <HomeAboutUs id='HomeAboutUs'/>
-            <HomeSeparator id='SeparatorOptions' text='Komu pomagamy?'/>
-            <HomeOptions id='HomeOptions'/>
-            <HomeContactUs id='HomeContactUs'/>
-            <HomeFooter/>
+            <HomeHeader param='main' />
+            <HomeHero id='HomeHero' />
+            <HomeThreeColumns id='HomeThreeColumns' />
+            <HomeSeparator id='SeparatorFour' text='Wystarczą 4 proste kroki' />
+            <HomeFourColumns />
+            <HomeShareStuff />
+            <HomeAboutUs id='HomeAboutUs' />
+            <HomeSeparator id='SeparatorOptions' text='Komu pomagamy?' />
+            <HomeOptions id='HomeOptions' />
+            <HomeContactUs id='HomeContactUs' />
+            <HomeFooter />
         </div>
     )
 };

@@ -27,7 +27,7 @@ const Login = () => {
 
     return (
         <div className='login container-fluid'>
-            <HomeHeader/>
+            <HomeHeader param='others' />
             <div className='login__section'>
                 <HomeSeparator id='login__separator' text='Zaloguj się'/>
                 <form className='contact-form form login-form'

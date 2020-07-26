@@ -4,10 +4,9 @@ import HomeSeparator from "./HomeSeparator";
 import {Link} from "react-router-dom";
 
 const Logout = () => {
-
     return (
         <div className='logout container-fluid'>
-            <HomeHeader/>
+            <HomeHeader param='others' />
             <div className='logout__section'>
                 <HomeSeparator id='logout__separator' text='Wylogowanie nastąpiło pomyślnie'/>
                 <div className='row form__row logout-form__row logout-form__row--button'>
