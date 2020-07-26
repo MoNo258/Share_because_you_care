@@ -18,7 +18,7 @@ const HomeContactUs = ({id}) => {
     const [statusError, setStatusError] = useState(null);
 
     const styleBackground = {
-        backgroundImage: 'url(' + backgroundContactUs + ')'
+        backgroundImage: `url(${backgroundContactUs})`
     };
 
     const handleSubmit = (e) => {

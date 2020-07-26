@@ -33,7 +33,7 @@ const Register = () => {
 
     return (
         <div className='register container-fluid'>
-            <HomeHeader/>
+            <HomeHeader param='others' />
             <div className='register__section'>
                 <HomeSeparator id='register__separator' text='Załóż konto'/>
                 <form className='contact-form form register-form'
