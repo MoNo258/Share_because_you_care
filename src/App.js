@@ -54,8 +54,7 @@ function App() {
             }
         });
     });
-
-
+    
     return loading === true
         ?
         (<div>

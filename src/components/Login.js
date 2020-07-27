@@ -7,9 +7,9 @@ import {login} from "../firebase/auth";
 const Login = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [errorLogin, setErrorLogin] = useState(null);
     const [errorEmail, setErrorEmail] = useState(null);
     const [errorPassword, setErrorPassword] = useState(null);
+    const [errorLogin, setErrorLogin] = useState(null);
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -34,6 +34,7 @@ const Login = () => {
         } else {
             setErrorPassword(null)
         }
+
     }, [email, password]);
 
     return (
@@ -98,10 +99,13 @@ const Login = () => {
                             {(errorEmail || errorPassword || email === '' || password === '')
                                 ?
                                 <button className="form__button login-form__button login-form__button--right"
-                                        disabled={true}>Zaloguj się</button>
+                                        disabled={true}>
+                                    Zaloguj się
+                                </button>
                                 :
-                                <button className="form__button login-form__button login-form__button--right">Zaloguj
-                                    się</button>
+                                <button className="form__button login-form__button login-form__button--right">
+                                    Zaloguj się
+                                </button>
                             }
                         </div>
                     </div>

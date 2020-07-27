@@ -128,11 +128,14 @@ const Register = () => {
                             {(errorEmail || errorPassword || errorPasswordRepeat || email === '' || password === '' || passwordRepeat === '')
                                 ?
                                 <button className="form__button register-form__button register-form__button--right"
-                                        disabled={true}>Załóż konto</button>
+                                        disabled={true}>
+                                    Załóż konto
+                                </button>
                                 :
                                 <button
-                                    className="form__button register-form__button register-form__button--right">Załóż
-                                    konto</button>
+                                    className="form__button register-form__button register-form__button--right">
+                                    Załóż konto
+                                </button>
                             }
                         </div>
                     </div>
