@@ -79,6 +79,7 @@ const HomeOptionsList = ({option}) => {
                 <div className='row list__row--pagination'>
                     {totalItems / itemsPerPage !== 1 ?
                         <Pagination className=' options__pagination-item options__pagination-link'
+                                    activeClass='is-active'
                                     hideNavigation
                                     hideFirstLastPages
                                     activePage={activePage}

@@ -12,7 +12,36 @@ project currently in progress (first sprint is done)
 * `react-js-pagination`
 * API
 
-### Available Scripts
+
+## Useful info
+
+### General stuff
+For running app locally you need to follow below steps.
+
+#### Step 1 - clone code and install needed packages
+1. Clone app: `git clone https://github.com/MoNo258/Share_because_you_care`
+2. Go to folder where files will be placed `cd Share_because_you_care`
+3. In above folder run in terminal `npm i`
+
+#### Step 2 - connect to Firebase
+If you want to download this project locally and run it there you also need to connect the project with Firebase.
+1. You need to create Firebase account and then project for web app that must be connected to this one (use Firebase tutorials).
+2. Create file `secret.js` with details for Firebase.
+    * create file: `src/services/secret.js`. Structure should be as follows:
+```JavaScript
+//Firebase web app configuration
+export const firebaseConfig = {
+    apiKey: 'YOUR_DATA',
+    authDomain: 'YOUR_DATA',
+    databaseURL: 'YOUR_DATA',
+    projectId: 'YOUR_DATA',
+    storageBucket: 'YOUR_DATA',
+    messagingSenderId: 'YOUR_DATA',
+    appId: 'YOUR_DATA'
+};
+```
+
+#### Step 3 - run needed scripts
 
 In the project directory, you can run:
 
@@ -39,7 +68,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-#### Learn More
+#### Learn More about Create React App
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 

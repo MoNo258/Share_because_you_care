@@ -8,15 +8,17 @@
 .nav--first {
   font-size: 14px;
   margin-bottom: 26px;
-  .nav-link{
-    text-decoration: none;
-    color: $color-light-grey;
-    border: 0.75px solid transparent;
-    &:active{
-      border: 0.75px solid $color-yellow;
-    }
-    &:hover{
-      border: 0.75px solid $color-yellow;
+  .nav-item {
+    .nav-link {
+      text-decoration: none;
+      color: $color-light-grey;
+      border: 0.75px solid transparent;
+      &:active {
+        border: 0.75px solid $color-yellow;
+      }
+      &:hover {
+        border: 0.75px solid $color-yellow;
+      }
     }
   }
 }
@@ -24,15 +26,18 @@
 .nav--second {
   font-size: 18px;
   color: $color-dark-grey;
-  a{
+  a {
     color: $color-dark-grey;
-  }
-  .nav-link{
-    border: 0.75px solid transparent;
-    &:active{
+    &:active {
       border: 0.75px solid $color-dark-grey;
     }
-    &:hover{
+  }
+  .nav-link {
+    border: 0.75px solid transparent;
+    &:active {
+      border: 0.75px solid $color-dark-grey;
+    }
+    &:hover {
       border: 0.75px solid $color-dark-grey;
       cursor: pointer;
     }

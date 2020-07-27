@@ -22,3 +22,9 @@ yarn-debug.log*
 yarn-error.log*
 
 .idea
+
+# secret:
+/src/services/secret.js
+
+# not yet ready to be added:
+/src/firebase/db.js
