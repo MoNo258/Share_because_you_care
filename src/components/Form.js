@@ -8,7 +8,7 @@ const Form = () => {
 
     return (
         <div className='login container-fluid'>
-            <HomeHeader param='others' />
+            <HomeHeader param='logged' />
             Form
         </div>
     )

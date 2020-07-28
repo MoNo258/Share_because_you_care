@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import separatorImg from '../assets/Decoration.svg';
 import backgroundContactUs from '../assets/Background-Contact-Form.jpg';
+import {auth} from "../firebase/firebase.config";
 
 const HomeContactUs = ({id}) => {
     const [name, setName] = useState('');
@@ -16,6 +17,7 @@ const HomeContactUs = ({id}) => {
     const [errorMssg, setErrorMssg] = useState(null);
     const [statusSuccess, setStatusSuccess] = useState(null);
     const [statusError, setStatusError] = useState(null);
+    const [user, setUser] = useState(auth().currentUser);
 
     const styleBackground = {
         backgroundImage: `url(${backgroundContactUs})`
@@ -65,6 +67,14 @@ const HomeContactUs = ({id}) => {
     };
 
     useEffect( () => {
+        if (!user) {
+            setEmail('')
+            } else {
+            setEmail(user.email)
+        }
+    },[]);
+
+    useEffect( () => {
         if (name.length > 0 && !name.match("^[a-zA-Z]+$")) {
             setErrorName('Podane imię jest nieprawidłowe!')
         } else {setErrorName(null)}
@@ -81,7 +91,7 @@ const HomeContactUs = ({id}) => {
 
         setFullMessage({
             name: name,
-            email: email,
+            email: !user ? email : user.email,
             message: mssg
         });
 
@@ -144,11 +154,20 @@ const HomeContactUs = ({id}) => {
                                     </div>
                                     <div className='col-6 form__col'>
                                         <label htmlFor="email" className="form__label">Wpisz swój email</label>
-                                        <input type="email" placeholder='abc@xyz.com' id='email' name='email'
-                                               className='form__email form__input'
-                                               value={email}
-                                               onChange={e => setEmail(e.target.value)}
-                                        />
+                                        { !user
+                                            ?
+                                            <input type="email" placeholder='abc@xyz.com' id='email' name='email'
+                                                   className='form__email form__input'
+                                                   value={email}
+                                                   onChange={e => setEmail(e.target.value)}
+                                            />
+                                            :
+                                            <input type="email" placeholder='abc@xyz.com' id='email' name='email'
+                                                   className='form__email form__input'
+                                                   value={user.email}
+
+                                            />
+                                        }
                                         { errorEmail
                                             ?
                                             <p className='error-info'>

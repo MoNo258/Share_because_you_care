@@ -11,6 +11,7 @@ project currently in progress (first sprint is done)
 * Bootstrap, Sass
 * `react-js-pagination`
 * API
+* Firebase authentication (email & password)
 
 
 ## Useful info
