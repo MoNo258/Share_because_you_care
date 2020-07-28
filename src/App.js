@@ -33,7 +33,7 @@ const PublicRoute = ({component: Component, authenticated, ...rest}) => {
             render={
                 props => authenticated === false
                     ? <Component {...props} />
-                    : <Redirect to='/oddaj-rzeczy'/>
+                    : <Redirect to='/'/>
             }
         />
     )
@@ -69,7 +69,8 @@ function App() {
                         <PrivateRoute path='/oddaj-rzeczy' authenticated={authenticated} component={Form} />
                         <PublicRoute path='/logowanie' authenticated={authenticated} component={Login}/>
                         <PublicRoute path='/rejestracja' authenticated={authenticated} component={Register}/>
-                        <PublicRoute path='/wylogowano' authenticated={authenticated} component={Logout}/>
+                        {/*<PublicRoute path='/wylogowano' authenticated={authenticated} component={Logout}/>*/}
+                        <Route path='/wylogowano' authenticated={authenticated} component={Logout}/>
                     </Switch>
                 </Router>
             </>

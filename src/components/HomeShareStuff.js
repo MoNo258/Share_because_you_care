@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from "react-router-dom";
+import {auth} from "../firebase/firebase.config";
 
 const HomeShareStuff = () => {
+    const [user, setUser] = useState(auth().currentUser);
 
     return (
         <div className='home__share-stuff'>
             <section className='share-stuff'>
-                <Link to='/logowanie' className='btn btn-lg list__btn'>Oddaj rzeczy</Link>
+                {!user
+                    ? <Link to='/logowanie' className='btn btn-lg list__btn'>Oddaj rzeczy</Link>
+                    : <Link to='/oddaj-rzeczy' className='btn btn-lg list__btn'>Oddaj rzeczy</Link>
+                }
             </section>
         </div>
     )

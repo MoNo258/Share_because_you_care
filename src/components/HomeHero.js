@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Link} from "react-router-dom";
 import heroImage from '../assets/Home-Hero-Image.jpg';
 import heroSeparator from '../assets/Decoration.svg'
+import {auth} from "../firebase/firebase.config";
 
 const HomeHero = ({id}) => {
+    const [user, setUser] = useState(auth().currentUser);
 
     return (
         <div className='home__hero'>
@@ -24,7 +26,10 @@ const HomeHero = ({id}) => {
                         </div>
                         <ul className='hero__list'>
                             <li className='list__item'>
-                                <Link to='/logowanie' className='btn btn-lg list__btn'>Oddaj rzeczy</Link>
+                                {!user
+                                    ? <Link to='/logowanie' className='btn btn-lg list__btn'>Oddaj rzeczy</Link>
+                                    : <Link to='/oddaj-rzeczy' className='btn btn-lg list__btn'>Oddaj rzeczy</Link>
+                                }
                             </li>
                             <li className='list__item'>
                                 <Link to='/logowanie' className='btn btn-lg list__btn'>Zorganizuj zbiórkę</Link>

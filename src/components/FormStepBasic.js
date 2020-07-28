@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {Link} from "react-router-dom";
 import backgroundForm from '../assets/Background-Form.jpg'
 import FormInfo from "./FormInfo";
 import FormStepTitle from "./FormStepTitle";
 import FormStepOptions from "./FormStepOptions";
+import FormStepButtons from "./FormStepButtons";
 
 const FormStepBasic = () => {
     const possibleSteps = ['stepOne', 'stepTwo', 'stepThree', 'stepFour', 'summary', 'thanks'];
@@ -12,29 +12,9 @@ const FormStepBasic = () => {
     const [number, setNumber] = useState('');
     const [title, setTitle] = useState('');
     const [options, setOptions] = useState('');
-    const [stepIndex, setStepIndex] = useState(1);
-    const [disabledPrev, setDisabledPrev] = useState(false);
+    const [stepIndex, setStepIndex] = useState(0);
+    const [disabledPrev, setDisabledPrev] = useState(true);
     const [disabledNext, setDisabledNext] = useState(false);
-
-    const handleClickPrev = (e) => {
-        e.preventDefault();
-        const index = stepIndex -1;
-        const disabledPrevious = (index === 0);
-        setStepIndex(index);
-        setStep(possibleSteps[stepIndex]);
-        setDisabledPrev(disabledPrevious);
-        setDisabledNext(false);
-    };
-
-    const handleClickNext = (e) => {
-        e.preventDefault();
-        const index = stepIndex + 1;
-        const disabledNextOne = index === (possibleSteps.length - 1);
-        setStepIndex(index);
-        setStep(possibleSteps[stepIndex]);
-        setDisabledPrev(false);
-        setDisabledNext(disabledNextOne);
-    };
 
     useEffect(() => {
         switch (step) {
@@ -77,46 +57,79 @@ const FormStepBasic = () => {
 
     return (
         <>
-            <FormInfo
-                id={step}
-                text={text}
-            />
+            { step === 'stepOne' || step === 'stepTwo' || step === 'stepThree' || step === 'stepFour'
+                ?
+                <FormInfo
+                    id={step}
+                    text={text}
+                />
+                : null
+            }
 
-            <div className='form__formStep ' style={formStyle}>
-                <section className='formStep container-sm'>
-                    <div className='row formStep__row container-sm'>
-                        <div className='col-sm-12 col-6 formStep__col'>
+            <>
+                <div className='form__formStep ' style={formStyle}>
+                    <section className='formStep container-fluid'>
+                        <div className='row formStep__row container-sm'>
+                            <div className='col-sm-12 col-6 formStep__col'>
 
-                            <FormStepTitle
-                                id={step}
-                                number={number}
-                                title={title}
-                            />
+                                { step === 'stepOne' || step === 'stepTwo'
+                                || step === 'stepThree' || step === 'stepFour'
+                                    ?
+                                    <>
+                                        <FormStepTitle
+                                            id={step}
+                                            number={number}
+                                            title={title}
+                                        />
+                                        <FormStepOptions
+                                            id={step}
+                                            options={options}
+                                        />
+                                    </>
+                                    : null
+                                }
 
-                            <FormStepOptions
-                                id={step}
-                                options={options}
-                            />
+                                { step === 'summary'
+                                    ? <>Summary</>
+                                    : null
+                                }
 
-                            <div className='step__prevNext'>
-                                <button
-                                    className='step__prev'
-                                    onClick={e => handleClickPrev(e)}
-                                >
-                                    Wstecz
-                                </button>
-                                <button
-                                    className='step__next'
-                                    onClick={e => handleClickNext(e)}
-                                >
-                                    Dalej
-                                </button>
+                                { step === 'stepOne' || step === 'stepTwo'
+                                || step === 'stepThree' || step === 'stepFour'
+                                || step === 'summary'
+                                    ?
+                                    <FormStepButtons
+                                        stepIndex={stepIndex}
+                                        possibleSteps={possibleSteps}
+                                        disabledPrev={disabledPrev}
+                                        disabledNext={disabledNext}
+                                        setCallbackPrev={(index, disabledPrevious) => {
+                                            setStepIndex(index);
+                                            setStep(possibleSteps[index]);
+                                            setDisabledPrev(disabledPrevious);
+                                            setDisabledNext(false);
+                                        }}
+                                        setCallbackNext={(index, disabledNextOne) => {
+                                            setStepIndex(index);
+                                            setStep(possibleSteps[index]);
+                                            setDisabledPrev(false);
+                                            setDisabledNext(disabledNextOne);
+                                        }}
+                                    />
+                                    : null
+                                }
+
+                                { step === 'thanks'
+                                    ?
+                                    <>thanks</>
+                                    : null
+                                }
+
                             </div>
-
                         </div>
-                    </div>
-                </section>
-            </div>
+                    </section>
+                </div>
+            </>
         </>
     )
 };

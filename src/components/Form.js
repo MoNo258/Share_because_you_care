@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import HomeHeader from "./HomeHeader";
 import FormHero from "./FormHero";
-import FormInfo from "./FormInfo";
 import FormStepBasic from "./FormStepBasic";
 import HomeContactUs from "./HomeContactUs";
 import HomeFooter from "./HomeFooter";
@@ -14,10 +13,9 @@ const Form = () => {
         <div className='home'>
             { !user
                 ? <HomeHeader param='main' />
-                : <HomeHeader param='logged' />
+                : <HomeHeader param='form' />
             }
             <FormHero id='FormHero' />
-
             <FormStepBasic />
             <HomeContactUs id='HomeContactUs' />
             <HomeFooter />
