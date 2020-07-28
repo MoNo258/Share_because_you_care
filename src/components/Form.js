@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import HomeHeader from "./HomeHeader";
 import FormHero from "./FormHero";
 import FormInfo from "./FormInfo";
+import FormStepBasic from "./FormStepBasic";
 import HomeContactUs from "./HomeContactUs";
 import HomeFooter from "./HomeFooter";
 import {auth} from "../firebase/firebase.config";
@@ -16,7 +17,8 @@ const Form = () => {
                 : <HomeHeader param='logged' />
             }
             <FormHero id='FormHero' />
-            <FormInfo />
+
+            <FormStepBasic />
             <HomeContactUs id='HomeContactUs' />
             <HomeFooter />
         </div>

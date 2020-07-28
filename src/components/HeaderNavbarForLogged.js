@@ -15,7 +15,7 @@ const HeaderNavbarForLogged = () => {
                 <div className='nav-link' >Cześć {user}</div>
             </li>
             <li className='nav-item'>
-                <Link className='nav-link' to='/oddaj-rzeczy' activeClassName='selected'>Oddaj rzeczy</Link>
+                <Link className='nav-link' to='/oddaj-rzeczy' >Oddaj rzeczy</Link>
             </li>
             <li className='nav-item'>
                 <Link className='nav-link' to='/wylogowano'

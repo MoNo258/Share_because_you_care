@@ -164,8 +164,8 @@ const HomeContactUs = ({id}) => {
                                             :
                                             <input type="email" placeholder='abc@xyz.com' id='email' name='email'
                                                    className='form__email form__input'
-                                                   value={user.email}
-
+                                                   // value={user.email}
+                                                   defaultValue={user.email}
                                             />
                                         }
                                         { errorEmail
