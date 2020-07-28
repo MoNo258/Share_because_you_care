@@ -7,7 +7,7 @@ const FormHero = ({id}) => {
     return (
         <div className='home__formHero'>
             <section className='formHero' id={id}>
-                <div className='row'>
+                <div className='row formHero__row'>
                     <div className='col-6 col-sm-12 col-lg-6 formHero--left'>
                         <img src={formHeroImage} alt="hero"/>
                     </div>

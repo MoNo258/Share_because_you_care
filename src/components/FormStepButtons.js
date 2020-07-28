@@ -2,7 +2,6 @@ import React from 'react';
 
 const FormStepButtons = ({stepIndex, possibleSteps, disabledPrev, disabledNext, setCallbackPrev, setCallbackNext}) => {
 
-
     const handleClickPrev = (e) => {
         e.preventDefault();
         const index = stepIndex - 1;
@@ -34,8 +33,7 @@ const FormStepButtons = ({stepIndex, possibleSteps, disabledPrev, disabledNext, 
                 {stepIndex === 4 ? 'Podsumowanie' : 'Dalej'}
             </button>
         </div>
-    )
+    );
 };
-
 
 export default FormStepButtons;

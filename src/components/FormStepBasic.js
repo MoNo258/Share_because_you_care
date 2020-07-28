@@ -68,7 +68,7 @@ const FormStepBasic = () => {
 
             <>
                 <div className='form__formStep ' style={formStyle}>
-                    <section className='formStep container-sm'>
+                    <section className='formStep container-fluid'>
                         <div className='row formStep__row container-sm'>
                             <div className='col-sm-12 col-6 formStep__col'>
 

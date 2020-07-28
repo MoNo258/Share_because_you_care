@@ -3,8 +3,7 @@ import React from 'react';
 const FormInfo = ({id, text}) => {
     return (
         <div className='form__formInfo' >
-            {/*<section className='formInfo container-fluid' >*/}
-            <section className='formInfo container-sm' >
+            <section className='formInfo container-fluid' >
                 <div className='formInfo__row'>
                     <h6 className='formInfo__title'>
                         Ważne!
