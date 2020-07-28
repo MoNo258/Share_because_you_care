@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-import {Link} from "react-router-dom";
 import backgroundForm from '../assets/Background-Form.jpg'
 import FormInfo from "./FormInfo";
 import FormStepTitle from "./FormStepTitle";
@@ -12,16 +11,16 @@ const FormStepBasic = () => {
     const [number, setNumber] = useState('');
     const [title, setTitle] = useState('');
     const [options, setOptions] = useState('');
-    const [stepIndex, setStepIndex] = useState(1);
-    const [disabledPrev, setDisabledPrev] = useState(false);
+    const [stepIndex, setStepIndex] = useState(0);
+    const [disabledPrev, setDisabledPrev] = useState(true);
     const [disabledNext, setDisabledNext] = useState(false);
 
     const handleClickPrev = (e) => {
         e.preventDefault();
-        const index = stepIndex -1;
+        const index = stepIndex - 1;
         const disabledPrevious = (index === 0);
         setStepIndex(index);
-        setStep(possibleSteps[stepIndex]);
+        setStep(possibleSteps[index]);
         setDisabledPrev(disabledPrevious);
         setDisabledNext(false);
     };
@@ -31,7 +30,7 @@ const FormStepBasic = () => {
         const index = stepIndex + 1;
         const disabledNextOne = index === (possibleSteps.length - 1);
         setStepIndex(index);
-        setStep(possibleSteps[stepIndex]);
+        setStep(possibleSteps[index]);
         setDisabledPrev(false);
         setDisabledNext(disabledNextOne);
     };
@@ -77,46 +76,104 @@ const FormStepBasic = () => {
 
     return (
         <>
-            <FormInfo
-                id={step}
-                text={text}
-            />
+            {step === 'stepOne' || step === 'stepTwo' || step === 'stepThree' || step === 'stepFour'
+                ?
+                <>
+                    <FormInfo
+                        id={step}
+                        text={text}
+                    />
 
-            <div className='form__formStep ' style={formStyle}>
-                <section className='formStep container-sm'>
-                    <div className='row formStep__row container-sm'>
-                        <div className='col-sm-12 col-6 formStep__col'>
+                    <div className='form__formStep ' style={formStyle}>
+                        <section className='formStep container-sm'>
+                            <div className='row formStep__row container-sm'>
+                                <div className='col-sm-12 col-6 formStep__col'>
 
-                            <FormStepTitle
-                                id={step}
-                                number={number}
-                                title={title}
-                            />
+                                    <FormStepTitle
+                                        id={step}
+                                        number={number}
+                                        title={title}
+                                    />
 
-                            <FormStepOptions
-                                id={step}
-                                options={options}
-                            />
+                                    <FormStepOptions
+                                        id={step}
+                                        options={options}
+                                    />
 
-                            <div className='step__prevNext'>
-                                <button
-                                    className='step__prev'
-                                    onClick={e => handleClickPrev(e)}
-                                >
-                                    Wstecz
-                                </button>
-                                <button
-                                    className='step__next'
-                                    onClick={e => handleClickNext(e)}
-                                >
-                                    Dalej
-                                </button>
+                                    <div className='step__prevNext'>
+                                        <button
+                                            className='step__prev'
+                                            onClick={e => handleClickPrev(e)}
+                                            disabled={disabledPrev}
+                                        >
+                                            Wstecz
+                                        </button>
+                                        <button
+                                            className='step__next'
+                                            onClick={e => handleClickNext(e)}
+                                            disabled={disabledNext}
+                                        >
+                                            Dalej
+                                        </button>
+                                    </div>
+
+                                </div>
                             </div>
-
-                        </div>
+                        </section>
                     </div>
-                </section>
-            </div>
+                </>
+                :
+                step === 'summary'
+                    ?
+                    <>
+                        <div className='form__formStep ' style={formStyle}>
+                            <section className='formStep container-sm'>
+                                <div className='row formStep__row container-sm'>
+                                    <div className='col-sm-12 col-6 formStep__col'>
+
+                                        summary
+
+                                        <div className='step__prevNext'>
+                                            <button
+                                                className='step__prev'
+                                                onClick={e => handleClickPrev(e)}
+                                                disabled={disabledPrev}
+                                            >
+                                                Wstecz
+                                            </button>
+                                            <button
+                                                className='step__next'
+                                                onClick={e => handleClickNext(e)}
+                                                disabled={disabledNext}
+                                            >
+                                                Potwierdzam
+                                            </button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </>
+                    :
+                    step === 'thanks'
+                        ?
+                        <>
+                            <div className='form__formStep ' style={formStyle}>
+                                <section className='formStep container-sm'>
+                                    <div className='row formStep__row container-sm'>
+                                        <div className='col-sm-12 col-6 formStep__col'>
+
+                                            thanks
+
+
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </>
+                        : null
+            }
         </>
     )
 };
