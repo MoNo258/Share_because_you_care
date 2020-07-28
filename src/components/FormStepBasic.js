@@ -3,6 +3,7 @@ import backgroundForm from '../assets/Background-Form.jpg'
 import FormInfo from "./FormInfo";
 import FormStepTitle from "./FormStepTitle";
 import FormStepOptions from "./FormStepOptions";
+import FormStepButtons from "./FormStepButtons";
 
 const FormStepBasic = () => {
     const possibleSteps = ['stepOne', 'stepTwo', 'stepThree', 'stepFour', 'summary', 'thanks'];
@@ -14,26 +15,6 @@ const FormStepBasic = () => {
     const [stepIndex, setStepIndex] = useState(0);
     const [disabledPrev, setDisabledPrev] = useState(true);
     const [disabledNext, setDisabledNext] = useState(false);
-
-    const handleClickPrev = (e) => {
-        e.preventDefault();
-        const index = stepIndex - 1;
-        const disabledPrevious = (index === 0);
-        setStepIndex(index);
-        setStep(possibleSteps[index]);
-        setDisabledPrev(disabledPrevious);
-        setDisabledNext(false);
-    };
-
-    const handleClickNext = (e) => {
-        e.preventDefault();
-        const index = stepIndex + 1;
-        const disabledNextOne = index === (possibleSteps.length - 1);
-        setStepIndex(index);
-        setStep(possibleSteps[index]);
-        setDisabledPrev(false);
-        setDisabledNext(disabledNextOne);
-    };
 
     useEffect(() => {
         switch (step) {
@@ -100,22 +81,27 @@ const FormStepBasic = () => {
                                         options={options}
                                     />
 
-                                    <div className='step__prevNext'>
-                                        <button
-                                            className='step__prev'
-                                            onClick={e => handleClickPrev(e)}
-                                            disabled={disabledPrev}
-                                        >
-                                            Wstecz
-                                        </button>
-                                        <button
-                                            className='step__next'
-                                            onClick={e => handleClickNext(e)}
-                                            disabled={disabledNext}
-                                        >
-                                            Dalej
-                                        </button>
-                                    </div>
+
+                                    <FormStepButtons
+                                        stepIndex={stepIndex}
+                                        possibleSteps={possibleSteps}
+                                        disabledPrev={disabledPrev}
+                                        disabledNext={disabledNext}
+                                        setCallbackPrev={ (index, disabledPrevious ) => {
+                                            setStepIndex(index);
+                                            setStep(possibleSteps[index]);
+                                            setDisabledPrev(disabledPrevious);
+                                            setDisabledNext(false);
+                                        }}
+                                        setCallbackNext={ (index, disabledNextOne) => {
+                                            setStepIndex(index);
+                                            setStep(possibleSteps[index]);
+                                            setDisabledPrev(false);
+                                            setDisabledNext(disabledNextOne);
+                                        }}
+                                    />
+
+
 
                                 </div>
                             </div>
@@ -133,22 +119,24 @@ const FormStepBasic = () => {
 
                                         summary
 
-                                        <div className='step__prevNext'>
-                                            <button
-                                                className='step__prev'
-                                                onClick={e => handleClickPrev(e)}
-                                                disabled={disabledPrev}
-                                            >
-                                                Wstecz
-                                            </button>
-                                            <button
-                                                className='step__next'
-                                                onClick={e => handleClickNext(e)}
-                                                disabled={disabledNext}
-                                            >
-                                                Potwierdzam
-                                            </button>
-                                        </div>
+                                        <FormStepButtons
+                                            stepIndex={stepIndex}
+                                            possibleSteps={possibleSteps}
+                                            disabledPrev={disabledPrev}
+                                            disabledNext={disabledNext}
+                                            setCallbackPrev={ (index, disabledPrevious ) => {
+                                                setStepIndex(index);
+                                                setStep(possibleSteps[index]);
+                                                setDisabledPrev(disabledPrevious);
+                                                setDisabledNext(false);
+                                            }}
+                                            setCallbackNext={ (index, disabledNextOne) => {
+                                                setStepIndex(index);
+                                                setStep(possibleSteps[index]);
+                                                setDisabledPrev(false);
+                                                setDisabledNext(disabledNextOne);
+                                            }}
+                                        />
 
                                     </div>
                                 </div>
