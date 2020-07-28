@@ -1,0 +1,27 @@
+@import "../settings/variables";
+
+.form__formInfo{
+  width: 100%;
+  height: 179px;
+  background: $color-yellow;
+}
+
+.formInfo{
+  height: 100%;
+  width: 100%;
+}
+.formInfo__row{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.formInfo__title{
+  font-size: 36px;
+  font-weight: 600;
+}
+.formInfo__text{
+  font-size: 22px;
+}

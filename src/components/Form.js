@@ -1,15 +1,26 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import HomeHeader from "./HomeHeader";
-import HomeSeparator from "./HomeSeparator";
-import {Link} from "react-router-dom";
+import FormHero from "./FormHero";
+import FormInfo from "./FormInfo";
+import FormStepBasic from "./FormStepBasic";
+import HomeContactUs from "./HomeContactUs";
+import HomeFooter from "./HomeFooter";
+import {auth} from "../firebase/firebase.config";
 
 const Form = () => {
-
+    const [user, setUser] = useState(auth().currentUser);
 
     return (
-        <div className='login container-fluid'>
-            <HomeHeader param='others' />
-            Form
+        <div className='home'>
+            { !user
+                ? <HomeHeader param='main' />
+                : <HomeHeader param='logged' />
+            }
+            <FormHero id='FormHero' />
+
+            <FormStepBasic />
+            <HomeContactUs id='HomeContactUs' />
+            <HomeFooter />
         </div>
     )
 };

@@ -20,12 +20,6 @@
 }
 
 .hero--left {
-  //version with img as background but issue with displaying it
-  //top: 0;
-  //left: -483px;;
-  //width: 1368px;
-  //height: 963px;
-  //background: url('/assets/Home-Hero-Image.jpg') transparent 0% 0% no-repeat padding-box;
   width: 50%;
   position: relative;
   img {
@@ -57,16 +51,8 @@
 
 .hero__title--second {
   font-size: 38px;
-  //margin-bottom: 123px; //to be removed if decided not to use img as content for after pseudoclass
   margin-bottom: 25px;
   position: relative;
-  //&::after{
-  //  position: absolute;
-  //  content: url("/assets/Decoration.svg");
-  //  top: 0;
-  //  left: 50%;
-  //  transform: translate(-50%,200%);
-  //}
 }
 
 .hero__title--separator{

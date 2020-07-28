@@ -1,0 +1,76 @@
+@import "../settings/variables";
+
+.form__formStep {
+  width: 100%;
+  height: 885px;
+}
+
+.formStep{
+  width: 100%;
+  height: 100%;
+}
+
+.formStep__row {
+  width: 100%;
+  height: 100%;
+}
+
+.formStep__col {
+  padding: 0;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  position: relative;
+}
+
+.step__number {
+  margin-top: 35px;
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+.step__title {
+  margin-top: 70px;
+  font-size: 36px;
+  font-weight: 600;
+}
+
+.step__options {
+  margin-top: 44px;
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+.options__items {
+
+}
+
+.options__bags {
+
+}
+
+.options__location{
+
+}
+
+.step__prevNext {
+  position: absolute;
+  bottom: 50px;
+}
+
+.step__prev {
+  height: 80px;
+  width: 180px;
+  margin-right: 50px;
+  background: transparent;
+  border: 0.75px solid $color-dark-grey;
+}
+
+.step__next {
+  height: 80px;
+  width: 180px;
+  background: transparent;
+  border: 0.75px solid $color-dark-grey;
+}
