@@ -57,111 +57,79 @@ const FormStepBasic = () => {
 
     return (
         <>
-            {step === 'stepOne' || step === 'stepTwo' || step === 'stepThree' || step === 'stepFour'
+            { step === 'stepOne' || step === 'stepTwo' || step === 'stepThree' || step === 'stepFour'
                 ?
-                <>
-                    <FormInfo
-                        id={step}
-                        text={text}
-                    />
+                <FormInfo
+                    id={step}
+                    text={text}
+                />
+                : null
+            }
 
-                    <div className='form__formStep ' style={formStyle}>
-                        <section className='formStep container-sm'>
-                            <div className='row formStep__row container-sm'>
-                                <div className='col-sm-12 col-6 formStep__col'>
+            <>
+                <div className='form__formStep ' style={formStyle}>
+                    <section className='formStep container-sm'>
+                        <div className='row formStep__row container-sm'>
+                            <div className='col-sm-12 col-6 formStep__col'>
 
-                                    <FormStepTitle
-                                        id={step}
-                                        number={number}
-                                        title={title}
-                                    />
+                                { step === 'stepOne' || step === 'stepTwo'
+                                || step === 'stepThree' || step === 'stepFour'
+                                    ?
+                                    <>
+                                        <FormStepTitle
+                                            id={step}
+                                            number={number}
+                                            title={title}
+                                        />
+                                        <FormStepOptions
+                                            id={step}
+                                            options={options}
+                                        />
+                                    </>
+                                    : null
+                                }
 
-                                    <FormStepOptions
-                                        id={step}
-                                        options={options}
-                                    />
+                                { step === 'summary'
+                                    ? <>Summary</>
+                                    : null
+                                }
 
-
+                                { step === 'stepOne' || step === 'stepTwo'
+                                || step === 'stepThree' || step === 'stepFour'
+                                || step === 'summary'
+                                    ?
                                     <FormStepButtons
                                         stepIndex={stepIndex}
                                         possibleSteps={possibleSteps}
                                         disabledPrev={disabledPrev}
                                         disabledNext={disabledNext}
-                                        setCallbackPrev={ (index, disabledPrevious ) => {
+                                        setCallbackPrev={(index, disabledPrevious) => {
                                             setStepIndex(index);
                                             setStep(possibleSteps[index]);
                                             setDisabledPrev(disabledPrevious);
                                             setDisabledNext(false);
                                         }}
-                                        setCallbackNext={ (index, disabledNextOne) => {
+                                        setCallbackNext={(index, disabledNextOne) => {
                                             setStepIndex(index);
                                             setStep(possibleSteps[index]);
                                             setDisabledPrev(false);
                                             setDisabledNext(disabledNextOne);
                                         }}
                                     />
+                                    : null
+                                }
 
+                                { step === 'thanks'
+                                    ?
+                                    <>thanks</>
+                                    : null
+                                }
 
-
-                                </div>
                             </div>
-                        </section>
-                    </div>
-                </>
-                :
-                step === 'summary'
-                    ?
-                    <>
-                        <div className='form__formStep ' style={formStyle}>
-                            <section className='formStep container-sm'>
-                                <div className='row formStep__row container-sm'>
-                                    <div className='col-sm-12 col-6 formStep__col'>
-
-                                        summary
-
-                                        <FormStepButtons
-                                            stepIndex={stepIndex}
-                                            possibleSteps={possibleSteps}
-                                            disabledPrev={disabledPrev}
-                                            disabledNext={disabledNext}
-                                            setCallbackPrev={ (index, disabledPrevious ) => {
-                                                setStepIndex(index);
-                                                setStep(possibleSteps[index]);
-                                                setDisabledPrev(disabledPrevious);
-                                                setDisabledNext(false);
-                                            }}
-                                            setCallbackNext={ (index, disabledNextOne) => {
-                                                setStepIndex(index);
-                                                setStep(possibleSteps[index]);
-                                                setDisabledPrev(false);
-                                                setDisabledNext(disabledNextOne);
-                                            }}
-                                        />
-
-                                    </div>
-                                </div>
-                            </section>
                         </div>
-                    </>
-                    :
-                    step === 'thanks'
-                        ?
-                        <>
-                            <div className='form__formStep ' style={formStyle}>
-                                <section className='formStep container-sm'>
-                                    <div className='row formStep__row container-sm'>
-                                        <div className='col-sm-12 col-6 formStep__col'>
-
-                                            thanks
-
-
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </>
-                        : null
-            }
+                    </section>
+                </div>
+            </>
         </>
     )
 };
