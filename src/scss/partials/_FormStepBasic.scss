@@ -43,21 +43,112 @@
   font-weight: lighter;
 }
 
+//START form step1: options: items
 .options__items {
-
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  .label__items{
+    margin-bottom: 40px;
+    font-size: 24px;
+  }
+  .input__items{
+    margin-right: 10px;
+  }
 }
-
-.options__bags {
-
+.input__items:not(:checked),
+.input__items:checked{
+  position: absolute;
+  margin-right: 1.5em;
+  bottom: 7px;
 }
+.input__items:not(:checked),
+.input__items:checked,
+.label__items,
+.label__items{
+  position: relative;
+  cursor: pointer;
+  padding-left: 0.5em;
+}
+.input__items:not(:checked):before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  border: 0.5px solid $color-dark-grey;
+  background: #fff;
+}
+.input__items:checked:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  background: $color-yellow;
+}
+.label__items:after + .input__items:not(:checked){
+  opacity: 0;
+  transform: scale(0);
+}
+.label__items:after + .input__items:checked {
+  opacity: 1;
+  transform: scale(1);
+}
+//End form step1: options: items
 
+
+
+//START form step2: options: bags
+.options__bags {}
+.bags__label{}
+.bags__span{
+  margin-right: 15px;
+}
+.bags__select{
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: lighter;
+  appearance: none;
+  height: 40px;
+  width: 200px;
+  cursor: pointer;
+  &:focus{
+    background: red;
+  }
+}
+.bags__option{
+  font-size: 24px;
+  font-weight: lighter;
+  background: #EEEDEB;
+}
+//End form step2: options: bags
+
+
+
+
+//START form step3: options: location
 .options__location{
 
 }
 
+//END form step3: options: location
+
+
+
+
+//Start form step4: options: when
 .options__when{
   
 }
+
+//END form step4: options: when
+
+
 
 .step__prevNext {
   position: absolute;
