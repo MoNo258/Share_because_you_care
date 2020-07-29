@@ -7,7 +7,7 @@ import FormStepButtons from "./FormStepButtons";
 
 const FormStepBasic = () => {
     const possibleSteps = ['stepOne', 'stepTwo', 'stepThree', 'stepFour', 'summary', 'thanks'];
-    const [step, setStep] = useState(possibleSteps[1]);
+    const [step, setStep] = useState(possibleSteps[0]);
     const [text, setText] = useState('');
     const [number, setNumber] = useState('');
     const [title, setTitle] = useState('');
