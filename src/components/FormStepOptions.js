@@ -10,7 +10,7 @@ const FormStepOptions = ({step, options}) => {
     const [checkboxItemFive, setCheckboxItemFive] = useState(false);
     const bags = [1, 2, 3, 4, 5];
     const [selectedBag, setSelectedBag] = useState('--- wybierz ---');
-    const cities = ['Poznań', 'Warszawa','Wrocław' , 'Kraków', 'Katowice'];
+    const cities = ['Poznań', 'Warszawa', 'Wrocław', 'Kraków', 'Katowice'];
     const [selectedCity, setSelectedCity] = useState('--- wybierz ---');
     const [checkboxLocOne, setCheckboxLocOne] = useState(false);
     const [checkboxLocTwo, setCheckboxLocTwo] = useState(false);
@@ -18,6 +18,15 @@ const FormStepOptions = ({step, options}) => {
     const [checkboxLocFour, setCheckboxLocFour] = useState(false);
     const [checkboxLocFive, setCheckboxLocFive] = useState(false);
     const [locationSpecific, setLocationSpecific] = useState('');
+    const [whenDetails, setWhenDetails] = useState({
+        street: '',
+        city: '',
+        code: '',
+        phone: '',
+        date: '',
+        time: '',
+        notes: '',
+    });
 
 
     const optionItems = () => {
@@ -146,7 +155,8 @@ const FormStepOptions = ({step, options}) => {
                     <label className='location__label--specific' htmlFor='locationSpecific'>
                         Wpisz nazwę konkretnej organizacji (opcjonalnie)
                     </label>
-                    <input type='text' name='locationSpecific' className='location__input--specific' id='locationSpecific'
+                    <input type='text' name='locationSpecific' className='location__input--specific'
+                           id='locationSpecific'
                            value={locationSpecific}
                            onChange={e => setLocationSpecific(e.target.value)}
                     />
@@ -156,10 +166,70 @@ const FormStepOptions = ({step, options}) => {
         );
     };
 
+
+    const handleWhenDetailsChange = (e) => {
+        const {name, value} = e.target;
+        setWhenDetails(prev => ({
+                ...prev,
+                [name]: value
+            })
+        )
+    };
+
     const optionWhen = () => {
         return (
             <form className='options__when'>
-                when (Podaj adres oraz termin odbioru rzecz przez kuriera)
+                <div className='row when__row'>
+                    <div className='col-6 when__col'>
+                        <div className='when__col--address'>Adres odbioru:</div>
+                        <div className='when__labelInput'>
+                            <label className='when__label' htmlFor='street'>Ulica</label>
+                            <input type='text' name='street' placeholder='' id='street' className='when__input'
+                                   value={whenDetails.street} onChange={handleWhenDetailsChange} />
+                        </div>
+
+                        <div className='when__labelInput'>
+                            <label className='when__label' htmlFor='city'>Miasto</label>
+                            <input type='text' name='city' placeholder='' id='city' className='when__input'
+                                   value={whenDetails.city} onChange={handleWhenDetailsChange} />
+                        </div>
+
+                        <div className='when__labelInput'>
+                            <label className='when__label' htmlFor='code'>Kod pocztowy</label>
+                            <input type='text' name='code' placeholder='' id='code' className='when__input'
+                                   value={whenDetails.code} onChange={handleWhenDetailsChange} />
+                        </div>
+
+                        <div className='when__labelInput'>
+                            <label className='when__label' htmlFor='phone'>Numer telefonu</label>
+                            <input type='text' name='phone' placeholder='' id='phone' className='when__input'
+                                   value={whenDetails.phone} onChange={handleWhenDetailsChange} />
+                        </div>
+
+                    </div>
+                    <div className='col-6 when__col'>
+                        <div className='when__col--date'>Termin odbioru:</div>
+                        <div className='when__labelInput'>
+                            <label className='when__label' htmlFor='date'>Data</label>
+                            <input type='text' name='date' placeholder='' id='date' className='when__input'
+                                   value={whenDetails.date} onChange={handleWhenDetailsChange} />
+                        </div>
+
+                        <div className='when__labelInput'>
+                            <label className='when__label' htmlFor='time'>Godzina</label>
+                            <input type='text' name='time' placeholder='' id='time' className='when__input'
+                                   value={whenDetails.time} onChange={handleWhenDetailsChange} />
+                        </div>
+
+                        <div className='when__labelInput'>
+                            <label className='when__label' htmlFor='notes'>Uwagi dla kuriera</label>
+                            <input type='text' name='notes' placeholder='' id='notes' className='when__input'
+                                   value={whenDetails.notes} onChange={handleWhenDetailsChange} />
+                        </div>
+
+                    </div>
+
+                </div>
             </form>
         );
     };

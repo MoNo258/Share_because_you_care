@@ -213,7 +213,47 @@
 .options__when{
   
 }
-
+.when__row{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  //flex-direction: column;
+}
+.when__col{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.when__col--address{
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.when__col--date{
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.when__labelInput{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.when__label{
+  font-size: 24px;
+  font-weight: lighter;
+  width: 110px;
+  margin-right: 20px;
+}
+.when__input{
+  background: transparent;
+  border: 0.5px solid $color-dark-grey;
+  font-size: 24px;
+  font-weight: lighter;
+}
 //END form step4: options: when
 
 
