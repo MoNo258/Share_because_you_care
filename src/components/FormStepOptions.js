@@ -1,21 +1,82 @@
-import React from 'react';
+import React, {useState} from 'react';
+import iconArrowDown from '../assets/Icon-Arrow-Down.svg';
+import iconArrowUp from '../assets/Icon-Arrow-Up.svg';
 
 const FormStepOptions = ({step, options}) => {
+    const bags = [1,2,3,4,5];
+    // const [bags, setBags] = useState([1, 2, 3, 4, 5]);
+    const [selectedBag, setSelectedBag] = useState('--- wybierz ---');
+
+
 
     const optionItems = () => {
         return (
             <form className='options__items'>
-                items checkboxes (Zaznacz co chcesz oddać:)
+                <label className='label__items'>
+                    <input type='checkbox' name='checkbox2' className='input__items'
+                        // checked='false'
+                        // onChange={}
+                    />
+                    ubrania, które nadają się do ponownego użycia
+                </label>
+
+                <label className='label__items'>
+                    <input type='checkbox' name='checkbox2' className='input__items'
+                        // checked='false'
+                        // onChange={}
+                    />
+                    ubrania, do wyrzucenia
+                </label>
+
+                <label className='label__items'>
+                    <input type='checkbox' name='checkbox3' className='input__items'
+                        // checked='false'
+                        // onChange={}
+                    />
+                    zabawki
+                </label>
+                <label className='label__items'>
+                    <input type='checkbox' name='checkbox4' className='input__items'
+                        // checked='false'
+                        // onChange={}
+                    />
+                    książki
+                </label>
+                <label className='label__items'>
+                    <input type='checkbox' name='checkbox5' className='input__items'
+                        // checked='false'
+                        // onChange={}
+                    />
+                    Inne
+                </label>
+
             </form>
         )
+    };
+
+    const styleSelect = {
+        background: `url(${iconArrowDown})`,
+        backgroundPosition: 'right',
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'auto'
     };
 
     const optionBags = () => {
         return (
             <form className='options__bags'>
-                bags no dropdown list (Podaj liczbę 60l worków, w które spakowałeś/aś rzeczy:)
+                <label className='bags__label'>
+                    <span className='bags__span'>Liczba 60l worków:</span>
+                    <select className='bags__select' style={styleSelect}
+                            value={selectedBag} onChange={e => setSelectedBag(e.target.value)}
+                    >
+                        <option className='bags__option' disabled>--- wybierz ---</option>
+                        {bags.map((bag, id) => {
+                            return <option key={id} value={bag} className='bags__option' >{bag}</option> }
+                        )}
+                    </select>
+                </label>
             </form>
-        );
+        )
     };
 
     const optionLocation = () => {
