@@ -1,0 +1,25 @@
+@import "../settings/variables";
+
+.step__prevNext {
+  position: absolute;
+  bottom: 50px;
+}
+.step__prev {
+  height: 80px;
+  width: 180px;
+  margin-right: 50px;
+  background: transparent;
+  border: 0.75px solid $color-dark-grey;
+  &:disabled{
+    display: none;
+  }
+}
+.step__next {
+  height: 80px;
+  width: 180px;
+  background: transparent;
+  border: 0.75px solid $color-dark-grey;
+  &:disabled{
+    display: none;
+  }
+}

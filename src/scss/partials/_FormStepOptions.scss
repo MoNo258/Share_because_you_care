@@ -1,0 +1,292 @@
+@import "../settings/variables";
+
+.step__options {
+  margin-top: 44px;
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+//START form step1: options: items
+.items__options {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  .items__label{
+    margin-bottom: 40px;
+    font-size: 24px;
+  }
+  .items__input{
+    margin-right: 10px;
+  }
+}
+.items__input:not(:checked),
+.items__input:checked{
+  position: absolute;
+  margin-right: 1.5em;
+  bottom: 7px;
+}
+.items__input:not(:checked),
+.items__input:checked,
+.items__label,
+.items__label{
+  position: relative;
+  cursor: pointer;
+  padding-left: 0.5em;
+}
+.items__input:not(:checked):before{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  border: 0.5px solid $color-dark-grey;
+  background: #EDEDEB;
+}
+.items__input:checked:after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1em;
+  height: 1em;
+  border: 0.5px solid $color-dark-grey;
+  background: $color-yellow;
+}
+.items__label:after + .items__input:not(:checked){
+  opacity: 0;
+  transform: scale(0);
+}
+.items__label:after + .items__input:checked {
+  opacity: 1;
+  transform: scale(1);
+}
+//End form step1: options: items
+
+//START form step2: options: bags
+.options__bags {}
+.bags__label{}
+.bags__span{
+  margin-right: 15px;
+}
+.bags__select{
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: lighter;
+  appearance: none;
+  height: 40px;
+  width: 200px;
+  cursor: pointer;
+  &:focus{
+    background: red;
+  }
+}
+.bags__option{
+  font-size: 24px;
+  font-weight: lighter;
+  background: #EEEDEB;
+}
+//End form step2: options: bags
+
+//START form step3: options: location
+.options__location--first{
+  margin-bottom: 50px;
+}
+.location__span{
+  margin-right: 15px;
+}
+.location__select{
+  padding-left: 10px;
+  padding-right: 10px;
+  font-weight: lighter;
+  appearance: none;
+  height: 40px;
+  width: 250px;
+  cursor: pointer;
+  &:focus{
+    background: red;
+  }
+}
+.location__option{
+  font-size: 24px;
+  font-weight: lighter;
+  background: #EEEDEB;
+}
+.options__location--second {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  .location__label{
+    margin-bottom: 20px;
+    font-size: 24px;
+    padding: 10px;
+    border: 0.5px solid $color-dark-grey;
+    background: transparent;
+  }
+  .location__input{
+    margin-right: 10px;
+  }
+}
+.location__input:not(:checked),
+.location__input:checked{
+  display: none;
+}
+.location__input:not(:checked),
+.location__input:checked,
+.location__label{
+  position: relative;
+  cursor: pointer;
+  padding-left: 0.5em;
+  margin-right: 0.7em;
+}
+.location__input:checked + .location__label {
+  background: $color-yellow;
+}
+.location__label--specific{
+  margin-top: 20px;
+  font-size: 24px;
+  font-weight: 600;
+  width: 100%;
+}
+.location__input--specific{
+  width: 100%;
+  background: transparent;
+  border: 0.5px solid $color-dark-grey;
+}
+//END form step3: options: location
+
+//Start form step4: options: when
+.options__when{}
+.when__row{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  //flex-direction: column;
+}
+.when__col{
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+}
+.when__col--address{
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.when__col--date{
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+.when__labelInput{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.when__label{
+  font-size: 24px;
+  font-weight: lighter;
+  width: 110px;
+  margin-right: 20px;
+}
+.when__input{
+  background: transparent;
+  border: 0.5px solid $color-dark-grey;
+  font-size: 24px;
+  font-weight: lighter;
+  resize: none;
+  width: 250px;
+}
+//END form step4: options: when
+
+
+//START form summary
+.options__summary{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  margin-top: -100px;
+}
+.summary__row{
+  width: 100%;
+}
+.summary__col{
+  width: 100%;
+}
+.summary__title{
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.summary__subtitle{
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.summary__list{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.summary__item{
+  display: flex;
+  margin-bottom: 15px;
+}
+.summary__item--image{
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  position: relative;
+  bottom: 10px;
+}
+.summary__item--text{
+  font-size: 24px;
+}
+.summary__label{
+  font-size: 24px;
+  font-weight: 300;
+  width: 100px;
+  margin-right: 20px;
+}
+.summary__value{
+  font-size: 24px;
+  font-weight: 300;
+  width: 220px;
+}
+//END form summary
+
+//START form thanks
+.options__thanks{
+  height: 800px;
+  width: 100%;
+}
+.thanks__row{
+  height: 100%;
+  width: 100%;
+}
+.thanks__col{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
+.thanks__text{;
+  width: 75%;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 45px;
+  margin-bottom: 20px;
+}
+.thanks__image{}
+//END form thanks

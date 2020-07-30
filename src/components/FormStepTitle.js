@@ -13,5 +13,4 @@ const FormStepTitle = ({step, number, title}) => {
     )
 };
 
-
 export default FormStepTitle;

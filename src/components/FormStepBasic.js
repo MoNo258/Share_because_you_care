@@ -77,13 +77,11 @@ const FormStepBasic = () => {
                 />
                 : null
             }
-
             <>
                 <div className='form__formStep ' style={formStyle}>
                     <section className='formStep container-fluid'>
                         <div className='row formStep__row container-sm'>
                             <div className='col-sm-12 col-6 formStep__col'>
-
                                 { step === 'stepOne' || step === 'stepTwo'
                                 || step === 'stepThree' || step === 'stepFour'
                                     || step === 'summary' || step === 'thanks'
@@ -101,15 +99,6 @@ const FormStepBasic = () => {
                                     </>
                                     : null
                                 }
-
-                                {/*{ step === 'summary'*/}
-                                {/*    ? <FormStepOptions*/}
-                                {/*        id={step}*/}
-                                {/*        options={options}*/}
-                                {/*    />*/}
-                                {/*    : null*/}
-                                {/*}*/}
-
                                 { step === 'stepOne' || step === 'stepTwo'
                                 || step === 'stepThree' || step === 'stepFour'
                                 || step === 'summary'
@@ -134,16 +123,6 @@ const FormStepBasic = () => {
                                     />
                                     : null
                                 }
-
-                                {/*{ step === 'thanks'*/}
-                                {/*    ?*/}
-                                {/*    <FormStepOptions*/}
-                                {/*        id={step}*/}
-                                {/*        options={options}*/}
-                                {/*    />*/}
-                                {/*    : null*/}
-                                {/*}*/}
-
                             </div>
                         </div>
                     </section>
