@@ -42,6 +42,18 @@ const FormStepBasic = () => {
                 setTitle('Podaj adres oraz termin odbioru rzecz przez kuriera');
                 setOptions('when');
                 break;
+            case 'summary':
+                setText('');
+                setNumber('');
+                setTitle('');
+                setOptions('summary');
+                break;
+            case 'thanks':
+                setText('');
+                setNumber('');
+                setTitle('');
+                setOptions('thanks');
+                break;
             default:
                 setText('Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.');
                 setNumber('Krok 1/4');
@@ -74,6 +86,7 @@ const FormStepBasic = () => {
 
                                 { step === 'stepOne' || step === 'stepTwo'
                                 || step === 'stepThree' || step === 'stepFour'
+                                    || step === 'summary' || step === 'thanks'
                                     ?
                                     <>
                                         <FormStepTitle
@@ -89,10 +102,13 @@ const FormStepBasic = () => {
                                     : null
                                 }
 
-                                { step === 'summary'
-                                    ? <>Summary</>
-                                    : null
-                                }
+                                {/*{ step === 'summary'*/}
+                                {/*    ? <FormStepOptions*/}
+                                {/*        id={step}*/}
+                                {/*        options={options}*/}
+                                {/*    />*/}
+                                {/*    : null*/}
+                                {/*}*/}
 
                                 { step === 'stepOne' || step === 'stepTwo'
                                 || step === 'stepThree' || step === 'stepFour'
@@ -119,11 +135,14 @@ const FormStepBasic = () => {
                                     : null
                                 }
 
-                                { step === 'thanks'
-                                    ?
-                                    <>thanks</>
-                                    : null
-                                }
+                                {/*{ step === 'thanks'*/}
+                                {/*    ?*/}
+                                {/*    <FormStepOptions*/}
+                                {/*        id={step}*/}
+                                {/*        options={options}*/}
+                                {/*    />*/}
+                                {/*    : null*/}
+                                {/*}*/}
 
                             </div>
                         </div>
