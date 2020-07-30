@@ -1,5 +1,4 @@
 import React, {Component, useEffect, useState} from 'react';
-import {createBrowserHistory} from "history";
 import {HashRouter as Router, Route, Switch, Redirect} from "react-router-dom";
 import Home from "../src/components/Home";
 import Login from "./components/Login";
@@ -7,8 +6,6 @@ import Register from "./components/Register";
 import Logout from "./components/Logout";
 import {auth} from "./firebase/firebase.config";
 import Form from "./components/Form";
-
-const history = createBrowserHistory();
 
 // due to distinguish between private and public routes this project has created `higher-order components` (HOCs) for both types of routes
 // <PrivateRoute> HOC:
@@ -63,13 +60,12 @@ function App() {
         :
         (
             <>
-                <Router history={history}>
+                <Router>
                     <Switch>
                         <Route exact path='/' component={Home}/>
                         <PrivateRoute path='/oddaj-rzeczy' authenticated={authenticated} component={Form} />
                         <PublicRoute path='/logowanie' authenticated={authenticated} component={Login}/>
                         <PublicRoute path='/rejestracja' authenticated={authenticated} component={Register}/>
-                        {/*<PublicRoute path='/wylogowano' authenticated={authenticated} component={Logout}/>*/}
                         <Route path='/wylogowano' authenticated={authenticated} component={Logout}/>
                     </Switch>
                 </Router>

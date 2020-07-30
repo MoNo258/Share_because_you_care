@@ -122,7 +122,7 @@
   align-items: flex-start;
   flex-wrap: wrap;
   .location__label{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     font-size: 24px;
     padding: 10px;
     border: 0.5px solid $color-dark-grey;
@@ -131,6 +131,12 @@
   .location__input{
     margin-right: 10px;
   }
+}
+.location__subtitle--second{
+  margin-top: 0px;
+  font-size: 24px;
+  font-weight: 600;
+  width: 100%;
 }
 .location__input:not(:checked),
 .location__input:checked{
@@ -167,7 +173,6 @@
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  //flex-direction: column;
 }
 .when__col{
   display: flex;
@@ -204,6 +209,30 @@
   font-weight: lighter;
   resize: none;
   width: 250px;
+}
+.button__checkForm{
+  font-size: 16px;
+  height: 80px;
+  width: 180px;
+  background: $color-yellow;
+  border: 0.75px solid $color-dark-grey;
+  position: relative;
+  bottom: 0;
+  right: -520px;
+  z-index: 9999;
+}
+.errorsList__submit{
+  margin-top: -95px;
+}
+.errorsItems__submit{
+  font-size: 12px;
+  font-weight: bold;
+  color: #FB5252;
+}
+.successItems__submit{
+  font-size: 15px;
+  font-weight: bold;
+  color: #2D9E22;
 }
 //END form step4: options: when
 
@@ -250,13 +279,13 @@
   font-size: 24px;
 }
 .summary__label{
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 300;
   width: 100px;
   margin-right: 20px;
 }
 .summary__value{
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 300;
   width: 220px;
 }

@@ -3,7 +3,7 @@ import {Link} from "react-router-dom";
 import {auth} from "../firebase/firebase.config";
 
 const HomeShareStuff = () => {
-    const [user, setUser] = useState(auth().currentUser);
+    const [user] = useState(auth().currentUser);
 
     return (
         <div className='home__share-stuff'>
