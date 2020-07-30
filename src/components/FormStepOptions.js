@@ -440,7 +440,6 @@ const FormStepOptions = ({step, options}) => {
                 </div>
             </>
         )
-
     };
 
 
