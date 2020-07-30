@@ -86,6 +86,7 @@ const FormStepBasic = () => {
 
                                 { step === 'stepOne' || step === 'stepTwo'
                                 || step === 'stepThree' || step === 'stepFour'
+                                    || step === 'summary' || step === 'thanks'
                                     ?
                                     <>
                                         <FormStepTitle
@@ -101,13 +102,13 @@ const FormStepBasic = () => {
                                     : null
                                 }
 
-                                { step === 'summary'
-                                    ? <FormStepOptions
-                                        id={step}
-                                        options={options}
-                                    />
-                                    : null
-                                }
+                                {/*{ step === 'summary'*/}
+                                {/*    ? <FormStepOptions*/}
+                                {/*        id={step}*/}
+                                {/*        options={options}*/}
+                                {/*    />*/}
+                                {/*    : null*/}
+                                {/*}*/}
 
                                 { step === 'stepOne' || step === 'stepTwo'
                                 || step === 'stepThree' || step === 'stepFour'
@@ -134,14 +135,14 @@ const FormStepBasic = () => {
                                     : null
                                 }
 
-                                { step === 'thanks'
-                                    ?
-                                    <FormStepOptions
-                                        id={step}
-                                        options={options}
-                                    />
-                                    : null
-                                }
+                                {/*{ step === 'thanks'*/}
+                                {/*    ?*/}
+                                {/*    <FormStepOptions*/}
+                                {/*        id={step}*/}
+                                {/*        options={options}*/}
+                                {/*    />*/}
+                                {/*    : null*/}
+                                {/*}*/}
 
                             </div>
                         </div>

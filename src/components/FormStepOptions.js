@@ -3,6 +3,7 @@ import iconArrowDown from '../assets/Icon-Arrow-Down.svg';
 import iconArrowUp from '../assets/Icon-Arrow-Up.svg';
 import iconShirt from '../assets/Icon-1.svg';
 import iconCircleArrows from '../assets/Icon-4.svg';
+import decorationIcon from '../assets/Decoration.svg';
 
 const FormStepOptions = ({step, options}) => {
     const [checkboxItemOne, setCheckboxItemOne] = useState(false);
@@ -92,27 +93,27 @@ const FormStepOptions = ({step, options}) => {
     useEffect(() => {
         setCheckboxItemsObject(prev => ({
                 ...prev,
-            checkboxItemOne: {...prev.checkboxItemOne ,state:checkboxItemOne},
-            checkboxItemTwo: {...prev.checkboxItemTwo ,state:checkboxItemTwo},
-            checkboxItemThree: {...prev.checkboxItemThree ,state:checkboxItemThree},
-            checkboxItemFour: {...prev.checkboxItemFour ,state:checkboxItemFour},
-            checkboxItemFive: {...prev.checkboxItemFive ,state:checkboxItemFive},
-              })
+                checkboxItemOne: {...prev.checkboxItemOne, state: checkboxItemOne},
+                checkboxItemTwo: {...prev.checkboxItemTwo, state: checkboxItemTwo},
+                checkboxItemThree: {...prev.checkboxItemThree, state: checkboxItemThree},
+                checkboxItemFour: {...prev.checkboxItemFour, state: checkboxItemFour},
+                checkboxItemFive: {...prev.checkboxItemFive, state: checkboxItemFive},
+            })
         )
     }, [checkboxItemOne, checkboxItemTwo, checkboxItemThree, checkboxItemFour, checkboxItemFive]);
 
     useEffect(() => {
         setCheckboxLocObject(prev => ({
                 ...prev,
-            checkboxLocOne: {...prev.checkboxLocOne ,state:checkboxLocOne},
-            checkboxLocTwo: {...prev.checkboxLocTwo ,state:checkboxLocTwo},
-            checkboxLocThree: {...prev.checkboxLocThree ,state:checkboxLocThree},
-            checkboxLocFour: {...prev.checkboxLocFour ,state:checkboxLocFour},
-            checkboxLocFive: {...prev.checkboxLocFive ,state:checkboxLocFive},
-            locationSpecific: {...prev.locationSpecific ,state:locationSpecific},
+                checkboxLocOne: {...prev.checkboxLocOne, state: checkboxLocOne},
+                checkboxLocTwo: {...prev.checkboxLocTwo, state: checkboxLocTwo},
+                checkboxLocThree: {...prev.checkboxLocThree, state: checkboxLocThree},
+                checkboxLocFour: {...prev.checkboxLocFour, state: checkboxLocFour},
+                checkboxLocFive: {...prev.checkboxLocFive, state: checkboxLocFive},
+                locationSpecific: {...prev.locationSpecific, state: locationSpecific},
             })
         )
-    }, [checkboxLocOne, checkboxLocTwo, checkboxLocThree, checkboxLocFour, checkboxLocFive,locationSpecific ]);
+    }, [checkboxLocOne, checkboxLocTwo, checkboxLocThree, checkboxLocFour, checkboxLocFive, locationSpecific]);
 
     const optionItems = () => {
         return (
@@ -310,8 +311,12 @@ const FormStepOptions = ({step, options}) => {
                         </div>
                         <div className='when__labelInput'>
                             <label className='when__label' htmlFor='notes'>Uwagi dla kuriera</label>
-                            <input type='text' name='notes' placeholder='' id='notes' className='when__input'
-                                   value={whenDetails.notes} onChange={handleWhenDetailsChange}/>
+                            <textarea id='notes' name='notes' cols='30' rows='4'
+                                      className='when__input'
+                                // placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.'
+                                      value={whenDetails.notes}
+                                      onChange={handleWhenDetailsChange}
+                            />
                         </div>
                     </div>
                 </div>
@@ -319,6 +324,9 @@ const FormStepOptions = ({step, options}) => {
         );
     };
 
+    const arrayItems = Object.keys(checkboxItemsObject).map(key => {
+        return [key, checkboxItemsObject[key]];
+    });
 
     const optionSummary = () => {
         return (
@@ -334,31 +342,102 @@ const FormStepOptions = ({step, options}) => {
                             </h5>
                             <ul className='summary__list'>
                                 <li className='summary__item'>
-                                    <img src={iconShirt} alt="icon-shirt" className='item__image'/>
-                                    <p className='item__text'>
+                                    <img src={iconShirt} alt="icon-shirt" className='summary__item--image'/>
+                                    <p className='summary__item--text'>
                                         {selectedBag === '1'
-                                            ? `${selectedBag} worek`
+                                            ? `${selectedBag} worek, `
                                             : selectedBag === '5'
-                                                ? `${selectedBag} worków`
-                                                : `${selectedBag} worki`}
-
-                                        {checkboxItemOne.value}
+                                                ? `${selectedBag} worków, `
+                                                : `${selectedBag} worki, `}
+                                        {arrayItems.map(item =>
+                                            item[1].state === true
+                                                ? `${item[1].value}, `
+                                                : null
+                                        )}
                                     </p>
                                 </li>
                                 <li className='summary__item'>
-                                    <img src={iconCircleArrows} alt="icon-shirt" className='item__arrows_as_circle'/>
-                                    <p className='item__text'>
+                                    <img src={iconCircleArrows} alt="icon-circle" className='summary__item--image'/>
+                                    <p className='summary__item--text'>
                                         dla lokalizacji: {selectedCity}
                                     </p>
                                 </li>
                             </ul>
-
+                            <div className='row summary__row'>
+                                <div className='col-6 summary__col'>
+                                    <h5 className='summary__subtitle'>
+                                        Adres odbioru:
+                                    </h5>
+                                    <ul className='summary__list'>
+                                        <li className='summary__item'>
+                                            <p className='summary__label'>
+                                                Ulica
+                                            </p>
+                                            <p className='summary__value'>
+                                                {whenDetails.street}
+                                            </p>
+                                        </li>
+                                        <li className='summary__item'>
+                                            <p className='summary__label'>
+                                                Miasto
+                                            </p>
+                                            <p className='summary__value'>
+                                                {whenDetails.city}
+                                            </p>
+                                        </li>
+                                        <li className='summary__item'>
+                                            <p className='summary__label'>
+                                                Kod pocztowy
+                                            </p>
+                                            <p className='summary__value'>
+                                                {whenDetails.code}
+                                            </p>
+                                        </li>
+                                        <li className='summary__item'>
+                                            <p className='summary__label'>
+                                                Numer telefonu
+                                            </p>
+                                            <p className='summary__value'>
+                                                {whenDetails.phone}
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className='col-6 summary__col'>
+                                    <h5 className='summary__subtitle'>
+                                        Termin odbioru:
+                                    </h5>
+                                    <ul className='summary__list'>
+                                        <li className='summary__item'>
+                                            <p className='summary__label'>
+                                                Data
+                                            </p>
+                                            <p className='summary__value'>
+                                                {whenDetails.date}
+                                            </p>
+                                        </li>
+                                        <li className='summary__item'>
+                                            <p className='summary__label'>
+                                                Godzina
+                                            </p>
+                                            <p className='summary__value'>
+                                                {whenDetails.time}
+                                            </p>
+                                        </li>
+                                        <li className='summary__item'>
+                                            <p className='summary__label'>
+                                                Uwagi dla kuriera
+                                            </p>
+                                            <p className='summary__value'>
+                                                {whenDetails.notes}
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-
                     </div>
-
                 </div>
-
             </>
         )
 
@@ -368,11 +447,20 @@ const FormStepOptions = ({step, options}) => {
     const optionThanks = () => {
         return (
             <>
-                thanks
-
+                <div className='options__thanks'>
+                    <div className='row thanks__row'>
+                        <div className='col-12 thanks__col'>
+                            <p className='thanks__text'>
+                                Dziękujemy za przesłanie formularza
+                                <br />
+                                Na maila prześlemy wszelkie informacje o odbiorze.
+                            </p>
+                            <img src={decorationIcon} alt="decoration-icon" className='thanks__image'/>
+                        </div>
+                    </div>
+                </div>
             </>
         )
-
     };
 
     return (
@@ -396,6 +484,5 @@ const FormStepOptions = ({step, options}) => {
         </>
     )
 };
-
 
 export default FormStepOptions;

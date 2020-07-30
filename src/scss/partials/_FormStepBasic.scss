@@ -4,17 +4,14 @@
   width: 100%;
   height: 800px;
 }
-
 .formStep{
   width: 100%;
   height: 100%;
 }
-
 .formStep__row {
   width: 100%;
   height: 100%;
 }
-
 .formStep__col {
   padding: 0;
   height: 100%;
@@ -24,19 +21,16 @@
   flex-direction: column;
   position: relative;
 }
-
 .step__number {
   margin-top: 35px;
   font-size: 24px;
   font-weight: lighter;
 }
-
 .step__title {
   margin-top: 70px;
   font-size: 36px;
   font-weight: 600;
 }
-
 .step__options {
   margin-top: 44px;
   font-size: 24px;
@@ -102,8 +96,6 @@
 }
 //End form step1: options: items
 
-
-
 //START form step2: options: bags
 .options__bags {}
 .bags__label{}
@@ -128,9 +120,6 @@
   background: #EEEDEB;
 }
 //End form step2: options: bags
-
-
-
 
 //START form step3: options: location
 .options__location--first{
@@ -202,9 +191,6 @@
 }
 //END form step3: options: location
 
-
-
-
 //Start form step4: options: when
 .options__when{}
 .when__row{
@@ -247,23 +233,99 @@
   border: 0.5px solid $color-dark-grey;
   font-size: 24px;
   font-weight: lighter;
+  resize: none;
+  width: 250px;
 }
 //END form step4: options: when
 
 
 //START form summary
-
+.options__summary{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  margin-top: -100px;
+}
+.summary__row{
+  width: 100%;
+}
+.summary__col{
+  width: 100%;
+}
+.summary__title{
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+.summary__subtitle{
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+.summary__list{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.summary__item{
+  display: flex;
+  margin-bottom: 15px;
+}
+.summary__item--image{
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  position: relative;
+  bottom: 10px;
+}
+.summary__item--text{
+  font-size: 24px;
+}
+.summary__label{
+  font-size: 24px;
+  font-weight: 300;
+  width: 100px;
+  margin-right: 20px;
+}
+.summary__value{
+  font-size: 24px;
+  font-weight: 300;
+  width: 220px;
+}
 //END form summary
 
 //START form thanks
-
+.options__thanks{
+  height: 800px;
+  width: 100%;
+}
+.thanks__row{
+  height: 100%;
+  width: 100%;
+}
+.thanks__col{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 150px;
+}
+.thanks__text{;
+  width: 75%;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 300;
+  line-height: 45px;
+  margin-bottom: 20px;
+}
+.thanks__image{}
 //END form thanks
 
 .step__prevNext {
   position: absolute;
   bottom: 50px;
 }
-
 .step__prev {
   height: 80px;
   width: 180px;
@@ -274,7 +336,6 @@
     display: none;
   }
 }
-
 .step__next {
   height: 80px;
   width: 180px;
