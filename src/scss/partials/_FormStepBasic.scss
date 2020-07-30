@@ -2,7 +2,7 @@
 
 .form__formStep {
   width: 100%;
-  height: 885px;
+  height: 800px;
 }
 
 .formStep{
@@ -156,9 +156,6 @@
   font-weight: lighter;
   background: #EEEDEB;
 }
-
-
-
 .options__location--second {
   height: 100%;
   width: 60%;
@@ -177,7 +174,6 @@
     margin-right: 10px;
   }
 }
-
 .location__input:not(:checked),
 .location__input:checked{
   display: none;
@@ -210,9 +206,7 @@
 
 
 //Start form step4: options: when
-.options__when{
-  
-}
+.options__when{}
 .when__row{
   width: 100%;
   display: flex;
@@ -257,6 +251,13 @@
 //END form step4: options: when
 
 
+//START form summary
+
+//END form summary
+
+//START form thanks
+
+//END form thanks
 
 .step__prevNext {
   position: absolute;

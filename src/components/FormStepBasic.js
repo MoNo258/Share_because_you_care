@@ -42,6 +42,18 @@ const FormStepBasic = () => {
                 setTitle('Podaj adres oraz termin odbioru rzecz przez kuriera');
                 setOptions('when');
                 break;
+            case 'summary':
+                setText('');
+                setNumber('');
+                setTitle('');
+                setOptions('summary');
+                break;
+            case 'thanks':
+                setText('');
+                setNumber('');
+                setTitle('');
+                setOptions('thanks');
+                break;
             default:
                 setText('Uzupełnij szczegóły dotyczące Twoich rzeczy. Dzięki temu będziemy wiedzieć komu najlepiej je przekazać.');
                 setNumber('Krok 1/4');
@@ -90,7 +102,10 @@ const FormStepBasic = () => {
                                 }
 
                                 { step === 'summary'
-                                    ? <>Summary</>
+                                    ? <FormStepOptions
+                                        id={step}
+                                        options={options}
+                                    />
                                     : null
                                 }
 
@@ -121,7 +136,10 @@ const FormStepBasic = () => {
 
                                 { step === 'thanks'
                                     ?
-                                    <>thanks</>
+                                    <FormStepOptions
+                                        id={step}
+                                        options={options}
+                                    />
                                     : null
                                 }
 
