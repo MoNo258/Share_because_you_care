@@ -5,7 +5,7 @@ import heroSeparator from '../assets/Decoration.svg'
 import {auth} from "../firebase/firebase.config";
 
 const HomeHero = ({id}) => {
-    const [user, setUser] = useState(auth().currentUser);
+    const [user] = useState(auth().currentUser);
 
     return (
         <div className='home__hero'>

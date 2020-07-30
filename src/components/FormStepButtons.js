@@ -30,7 +30,11 @@ const FormStepButtons = ({stepIndex, possibleSteps, disabledPrev, disabledNext, 
                 onClick={e => handleClickNext(e)}
                 disabled={disabledNext}
             >
-                {stepIndex === 4 ? 'Podsumowanie' : 'Dalej'}
+                {stepIndex === 4
+                    ? 'Potwierdzam'
+                    : stepIndex === 3
+                        ? 'Podsumowanie'
+                        : 'Dalej'}
             </button>
         </div>
     );

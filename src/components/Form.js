@@ -7,7 +7,7 @@ import HomeFooter from "./HomeFooter";
 import {auth} from "../firebase/firebase.config";
 
 const Form = () => {
-    const [user, setUser] = useState(auth().currentUser);
+    const [user] = useState(auth().currentUser);
 
     return (
         <div className='home'>

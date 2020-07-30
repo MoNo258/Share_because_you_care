@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import iconArrowDown from '../assets/Icon-Arrow-Down.svg';
-import iconArrowUp from '../assets/Icon-Arrow-Up.svg';
+// import iconArrowUp from '../assets/Icon-Arrow-Up.svg';
 import iconShirt from '../assets/Icon-1.svg';
 import iconCircleArrows from '../assets/Icon-4.svg';
 import decorationIcon from '../assets/Decoration.svg';
@@ -89,6 +89,7 @@ const FormStepOptions = ({step, options}) => {
         time: '',
         notes: '',
     });
+    const [error, setError] = useState(['']);
 
     useEffect(() => {
         setCheckboxItemsObject(prev => ({
@@ -114,6 +115,52 @@ const FormStepOptions = ({step, options}) => {
             })
         )
     }, [checkboxLocOne, checkboxLocTwo, checkboxLocThree, checkboxLocFour, checkboxLocFive, locationSpecific]);
+
+    const arrayItems = Object.keys(checkboxItemsObject).map(key => {
+        return [key, checkboxItemsObject[key]];
+    });
+    const arrayLocation = Object.keys(checkboxLocObject).map(key => {
+        return [key, checkboxLocObject[key]];
+    });
+    const handleSubmitForm = (e) => {
+        e.preventDefault();
+        const newError = [];
+
+        if(arrayItems[0][1].state === false && arrayItems[1][1].state === false
+            && arrayItems[2][1].state === false && arrayItems[3][1].state === false
+            && arrayItems[4][1].state === false){ newError.push('Wskaż co oddajesz')}
+        selectedBag === '--- wybierz ---' ? newError.push('Wybierz ilość worków') : console.log(selectedBag);
+        selectedCity === '--- wybierz ---' ? newError.push('Wybierz miasto') : console.log(selectedCity);
+        if(arrayLocation[0][1].state === false && arrayLocation[1][1].state === false
+            && arrayLocation[2][1].state === false && arrayLocation[3][1].state === false
+            && arrayLocation[4][1].state === false && arrayLocation[5][1].state==='')
+            { newError.push('Wskaż komu chcesz pomóc')}
+        if(whenDetails.street.length<3){ newError.push('Ulica jest za krótka')}
+        if(whenDetails.code.length < 5 || whenDetails.code.length > 6
+            || !whenDetails.code.match("^[0-9]{2}-[0-9]{3}$")){ newError.push('Kod pocztowy ma mie formę 00-000')}
+        if(whenDetails.city.length<2){ newError.push('Miasto jest za krótkie')}
+        if(whenDetails.phone.length!==9 || isNaN(Number(whenDetails.phone)))
+            { newError.push('Numer telefonu ma sie składać z samych cyfr bez spacji')}
+
+        const today = new Date();
+        const tomorrow = new Date(today);
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        const tomorrowYear = tomorrow.getFullYear()
+        const tomorrowMonth = (tomorrow.getMonth()+1).toString().length === 2 ? tomorrow.getMonth()+1 : `0${tomorrow.getMonth()+1}`
+        const tomorrowDay = tomorrow.getDate().toString().length === 2 ? tomorrow.getDate() : `0${tomorrow.getDate()}`
+        const newTomorrow = `${tomorrowYear}-${tomorrowMonth}-${tomorrowDay}`;
+        if(whenDetails.date === '' || whenDetails.date < newTomorrow)
+            { newError.push('Wybierz datę w przyszłości')}
+
+        if( !(whenDetails.time).match(`^([0-1]?[0-9]|2[0-4]):([0-5][0-9])(:[0-5][0-9])?$`) )
+            { newError.push('Wpisz poprawną godzinę')}
+
+        setError(newError);
+        setTimeout( () => {
+            setError(['']);
+        },2500);
+    };
+
 
     const optionItems = () => {
         return (
@@ -202,6 +249,7 @@ const FormStepOptions = ({step, options}) => {
                 </form>
 
                 <form className='options__location--second'>
+                    <p className='location__subtitle--second'>Komu chesz pomóc?</p>
                     <input type='checkbox' className='location__input'
                            name={checkboxLocObject.checkboxLocOne.name} id={checkboxLocObject.checkboxLocOne.name}
                            checked={checkboxLocObject.checkboxLocOne.state}
@@ -255,11 +303,9 @@ const FormStepOptions = ({step, options}) => {
                            onChange={e => setLocationSpecific(e.target.value)}
                     />
                 </form>
-
             </>
         );
     };
-
 
     const handleWhenDetailsChange = (e) => {
         const {name, value} = e.target;
@@ -272,7 +318,7 @@ const FormStepOptions = ({step, options}) => {
 
     const optionWhen = () => {
         return (
-            <form className='options__when'>
+            <form className='options__when' onSubmit={handleSubmitForm}>
                 <div className='row when__row'>
                     <div className='col-6 when__col'>
                         <div className='when__col--address'>Adres odbioru:</div>
@@ -301,7 +347,7 @@ const FormStepOptions = ({step, options}) => {
                         <div className='when__col--date'>Termin odbioru:</div>
                         <div className='when__labelInput'>
                             <label className='when__label' htmlFor='date'>Data</label>
-                            <input type='text' name='date' placeholder='' id='date' className='when__input'
+                            <input type='date' name='date' placeholder='' id='date' className='when__input'
                                    value={whenDetails.date} onChange={handleWhenDetailsChange}/>
                         </div>
                         <div className='when__labelInput'>
@@ -313,20 +359,26 @@ const FormStepOptions = ({step, options}) => {
                             <label className='when__label' htmlFor='notes'>Uwagi dla kuriera</label>
                             <textarea id='notes' name='notes' cols='30' rows='4'
                                       className='when__input'
-                                // placeholder='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.'
                                       value={whenDetails.notes}
                                       onChange={handleWhenDetailsChange}
                             />
                         </div>
                     </div>
                 </div>
+                <button className='button__checkForm'>Sprawdź formularz</button>
+                {error.length > 0 || error.toString().length > 1
+                    ?
+                    <ul className='errorsList__submit'>
+                        {error.map( (err, index) => <li className='errorsItems__submit' key={index}>{err}</li>)}
+                    </ul>
+                    :
+                    <ul className='errorsList__submit'>
+                        <li className='successItems__submit'>Wygląda dobrze :)</li>
+                    </ul>
+                }
             </form>
         );
     };
-
-    const arrayItems = Object.keys(checkboxItemsObject).map(key => {
-        return [key, checkboxItemsObject[key]];
-    });
 
     const optionSummary = () => {
         return (
@@ -442,7 +494,6 @@ const FormStepOptions = ({step, options}) => {
         )
     };
 
-
     const optionThanks = () => {
         return (
             <>
@@ -461,6 +512,7 @@ const FormStepOptions = ({step, options}) => {
             </>
         )
     };
+
 
     return (
         <>

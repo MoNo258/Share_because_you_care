@@ -17,7 +17,7 @@ const HomeContactUs = ({id}) => {
     const [errorMssg, setErrorMssg] = useState(null);
     const [statusSuccess, setStatusSuccess] = useState(null);
     const [statusError, setStatusError] = useState(null);
-    const [user, setUser] = useState(auth().currentUser);
+    const [user] = useState(auth().currentUser);
 
     const styleBackground = {
         backgroundImage: `url(${backgroundContactUs})`
@@ -72,7 +72,7 @@ const HomeContactUs = ({id}) => {
             } else {
             setEmail(user.email)
         }
-    },[]);
+    },[user]);
 
     useEffect( () => {
         if (name.length > 0 && !name.match("^[a-zA-Z]+$")) {
@@ -95,7 +95,7 @@ const HomeContactUs = ({id}) => {
             message: mssg
         });
 
-    }, [name, email, mssg]);
+    }, [name, email, mssg, user]);
 
     return (
         <div className='home__contact' style={styleBackground} >

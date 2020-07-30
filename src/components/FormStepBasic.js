@@ -69,7 +69,7 @@ const FormStepBasic = () => {
 
     return (
         <>
-            { step === 'stepOne' || step === 'stepTwo' || step === 'stepThree' || step === 'stepFour'
+            {step === 'stepOne' || step === 'stepTwo' || step === 'stepThree' || step === 'stepFour'
                 ?
                 <FormInfo
                     id={step}
@@ -82,9 +82,9 @@ const FormStepBasic = () => {
                     <section className='formStep container-fluid'>
                         <div className='row formStep__row container-sm'>
                             <div className='col-sm-12 col-6 formStep__col'>
-                                { step === 'stepOne' || step === 'stepTwo'
+                                {step === 'stepOne' || step === 'stepTwo'
                                 || step === 'stepThree' || step === 'stepFour'
-                                    || step === 'summary' || step === 'thanks'
+                                || step === 'summary' || step === 'thanks'
                                     ?
                                     <>
                                         <FormStepTitle
@@ -99,7 +99,7 @@ const FormStepBasic = () => {
                                     </>
                                     : null
                                 }
-                                { step === 'stepOne' || step === 'stepTwo'
+                                {step === 'stepOne' || step === 'stepTwo'
                                 || step === 'stepThree' || step === 'stepFour'
                                 || step === 'summary'
                                     ?
