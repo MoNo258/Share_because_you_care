@@ -20,7 +20,8 @@ const HomeContactUs = ({id}) => {
     const [user] = useState(auth().currentUser);
 
     const styleBackground = {
-        backgroundImage: `url(${backgroundContactUs})`
+        backgroundImage: `url(${backgroundContactUs})`,
+        backgroundSize: 'cover'
     };
 
     const handleSubmit = (e) => {
@@ -101,8 +102,8 @@ const HomeContactUs = ({id}) => {
         <div className='home__contact' style={styleBackground} >
             <section id={id} className='contact container-fluid'>
                 <div className='row contact__row'>
-                    <div className='col-lg-8 col-12 contact__col'></div>
-                    <div className='col-lg-4 col-12 contact__col'>
+                    <div className='col-xl-8 col-12'></div>
+                    <div className='col-xl-4 col-lg-6 col-12 contact__col'>
                         <div className='contact__right'>
                             <h3 className='right__title'>
                                 Skontaktuj się z nami

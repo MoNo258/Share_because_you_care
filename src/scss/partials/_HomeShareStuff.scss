@@ -9,3 +9,21 @@
   align-items: center;
 }
 .list__btn{}
+
+@media (max-width: 775px) {
+  .home__share-stuff{
+    height: 150px;
+  }
+}
+
+@media (max-width: 544px) {
+  .home__share-stuff{
+    height: 110px;
+  }
+}
+
+@media (max-width: 375px) {
+  .home__share-stuff{
+    height: 90px;
+  }
+}

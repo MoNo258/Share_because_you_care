@@ -29,7 +29,6 @@
 }
 .list__title{
   font-family: $font-alt;
-  font-size: 26px;
   font-size: 22px;
   font-weight: lighter;
   color: $color-dark-grey;
@@ -37,7 +36,6 @@
 }
 .list__text{
   font-family: $font-alt;
-  font-size: 18px;
   font-size: 16px;
   font-weight: 300;
   font-style: italic;
@@ -45,4 +43,50 @@
 }
 .list__text--right{
   font-style: normal;
+  text-align: right;
+}
+
+@media (max-width: 1024px) {
+  .list__title{
+    font-size: 20px;
+  }
+  .list__text{
+    font-size: 14px;
+  }
+}
+@media (max-width: 900px) {
+    .list__title{
+      font-size: 19px;
+    }
+    .list__text{
+      font-size: 13px;
+    }
+}
+@media (max-width: 767px) {
+  .list__row{
+      height: 81px;
+      margin: 0 0 15px 0;
+  }
+  .list__title{
+    font-size: 18px;
+  }
+  .list__text{
+    font-size: 12px;
+  }
+}
+@media (max-width: 600px) {
+  .list__row{
+    height: 70px;
+    margin: 0 0 8px 0;
+  }
+  .list__col--left{
+    height: 100%;
+    justify-content: center;
+  }
+  .list__title{
+    font-size: 15px;
+  }
+  .list__text{
+    font-size: 10px;
+  }
 }

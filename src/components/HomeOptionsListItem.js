@@ -4,7 +4,7 @@ const HomeOptionsListItem = ({name, goal, items}) => {
 
     return (
         <div className='row list__row'>
-            <div className='col-6 list__col'>
+            <div className='col-6 list__col list__col--left'>
                 <h4 className='list__title'>
                     {name}
                 </h4>
