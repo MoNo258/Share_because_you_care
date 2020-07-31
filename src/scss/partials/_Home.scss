@@ -1,24 +1,25 @@
+.home{
+  width: 100vw;
+}
 .container-fluid{
   max-width: 1700px;
 }
 
-
-
 @media (max-width: 1024px) {
-  body {
+  .container-fluid {
     max-width: 900px;
   }
 }
 
 @media (max-width: 900px) {
-  body {
+  .container-fluid {
     max-width: 800px;
   }
 }
 
 
 @media (max-width: 414px) {
-  body {
+  .container-fluid {
     max-width: 414px;
   }
 }

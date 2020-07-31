@@ -12,6 +12,7 @@
 .row {
   height: 100%;
   width: 100%;
+  overflow-x: hidden
 }
 
 .col-6 {
@@ -145,7 +146,7 @@
     height: calc(603px - 37px - 95px);
   }
   .hero--right {
-    margin-left: 25%;
+    margin-left: 0;
   }
   .hero__title {
     font-size: 28px;
