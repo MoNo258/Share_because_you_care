@@ -54,11 +54,22 @@
     margin-bottom: 20px;
   }
   .nav--burger{
+    margin-top: -30px;
     display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
   }
-  .navbar-collapse.show--burger{
-    transform: translate(0%);
+  .navbar-collapse{
+    text-align: end;
+    background: $color-lighter-grey;
+    width: 100%;
+    z-index: 1;
+    //transform: translate(0%);
   }
+  //.navbar-collapse.show--burger{
+  //  transform: translate(0%);
+  //}
   .nav--second {
     display: none;
   }
