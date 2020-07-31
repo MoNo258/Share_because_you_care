@@ -65,7 +65,7 @@ const HomeOptionsList = ({option}) => {
 
     return (
         <div className='home__options-list'>
-            <section className='options-list container'>
+            <section className='options-list container options-list__container'>
                 {displayList.map(list => {
                     return (
                         <HomeOptionsListItem key={list.id}

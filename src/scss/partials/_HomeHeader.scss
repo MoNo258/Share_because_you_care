@@ -43,6 +43,25 @@
     }
   }
 }
+.nav--burger{
+  display: none;
+}
 
+
+@media (max-width: 760px) {
+  .nav--first {
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  .nav--burger{
+    display: flex;
+  }
+  .navbar-collapse.show--burger{
+    transform: translate(0%);
+  }
+  .nav--second {
+    display: none;
+  }
+}
 
 

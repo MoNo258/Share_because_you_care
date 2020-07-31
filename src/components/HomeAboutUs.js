@@ -23,11 +23,11 @@ const HomeAboutUs = ({id}) => {
                                 Bunya nuts black-eyed pea prairie turnip leek lentil turnip greens parsnip.
                             </p>
                             <div className='left__signature'>
-                                <img src={signature} alt="signature"/>
+                                <img src={signature} alt="signature" className='signature__image'/>
                             </div>
                         </div>
                     </div>
-                    <div className='col-lg-6 col-12 about-us__col'>
+                    <div className='col-lg-6 col-12 about-us__col about-us__col--right '>
                         <div className='about-us__right'>
                             <img className='right_image' src={aboutUsImg} alt="people"/>
                         </div>

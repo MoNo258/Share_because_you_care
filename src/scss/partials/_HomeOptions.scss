@@ -47,3 +47,42 @@
     border: 0.75px solid $color-dark-grey;
   }
 }
+
+@media (max-width: 1024px) {
+  .options__card{
+    font-size: 20px;
+    line-height: 28px;
+  }
+  .options__button {
+    font-size: 22px;
+    height: 75px;
+    width: 205px;
+  }
+}
+@media (max-width: 767px) {
+  .home__options{
+    height: 210px;
+  }
+  .options__card{
+    font-size: 16px;
+    line-height: 26px;
+  }
+  .options__button {
+    font-size: 18px;
+    height: 50px;
+    width: 150px;
+  }
+}
+@media (max-width: 500px) {
+  .home__options{
+    height: 180px;
+  }
+  .col-3{}
+  .options__card{
+    font-size: 12px;
+    line-height: 17px;
+  }
+  .options__button {
+    font-size: 14px;
+  }
+}

@@ -3,7 +3,6 @@ Project was created as part of Coders Lab course. Prototype of the project ("Odd
 
 ## Demo:
 ## [Share because you care link](https://mono258.github.io/Share_because_you_care)
-project currently in progress (first sprint is done)
 
 ## This project uses
 * create-react-app (This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).)
