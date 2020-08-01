@@ -10,11 +10,11 @@ const HomeHero = ({id}) => {
     return (
         <div className='home__hero'>
             <section className='hero' id={id}>
-                <div className='row'>
-                    <div className='col-6 col-sm-12 col-lg-6 hero--left'>
+                <div className='row home__hero--row'>
+                    <div className='col-sm-12 col-md-4 col-lg-3 col-xl-6 hero--left'>
                         <img src={heroImage} alt="hero"/>
                     </div>
-                    <div className='col-6 col-md-12 col-lg-6 hero--right'>
+                    <div className='col-sm-12 col-md-8 col-lg-9 col-xl-6 hero--right'>
                         <h3 className='hero__title hero__title--first'>
                             Zacznij pomagać!
                         </h3>

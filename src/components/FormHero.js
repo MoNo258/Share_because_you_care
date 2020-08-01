@@ -8,10 +8,10 @@ const FormHero = ({id}) => {
         <div className='home__formHero'>
             <section className='formHero' id={id}>
                 <div className='row formHero__row'>
-                    <div className='col-6 col-sm-12 col-lg-6 formHero--left'>
+                    <div className='col-sm-12 col-md-4 col-lg-3 col-xl-6 formHero--left'>
                         <img src={formHeroImage} alt="hero"/>
                     </div>
-                    <div className='col-6 col-sm-12 col-lg-6 formHero--right'>
+                    <div className='col-sm-12 col-md-8 col-lg-9 col-xl-6 formHero--right'>
                         <h3 className='formHero__title formHero__title--first'>
                             Oddaj rzeczy, których już nie chcesz
                         </h3>
