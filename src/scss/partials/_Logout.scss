@@ -12,8 +12,9 @@
   line-height: 50px;
 }
 .logout__section {
-  height: 70%;
+  height: calc(100vh - 300px);
   width: 100%;
+  margin-top: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -46,4 +47,66 @@
   width: 30%;
   display: flex;
   justify-content: center;
+}
+
+@media (max-width: 1500px) {
+  #logout__separator{
+    margin-bottom: 20px;
+  }
+  .logout__section{
+    height: 70%;
+    margin-top: 50px;
+    justify-content: flex-start;
+  }
+  .logout-form__row--button{
+    height: 50px;
+  }
+  .logout-form__button{
+    margin-top: 20px;
+  }
+}
+@media (max-width: 1215px) {
+  #logout__separator{
+    width: 400px;
+  }
+  .logout__section{
+    margin-top: 30px;
+  }
+  .logout-form__row--button{
+    height: 40px;
+  }
+  .logout-form__button{
+    margin-top: 20px;
+  }
+}
+@media (max-width: 1024px) {
+  .logout-form__row--button{
+    height: 40px;
+  }
+  .logout-form__button{
+    margin-top: 20px;
+  }
+}
+@media (max-width: 760px) {
+  .logout__section{
+    margin-top: 0;
+  }
+  .logout-form__row--button{
+    height: 40px;
+  }
+  .logout-form__button{
+    margin-top: 20px;
+    padding: 5px 10px;
+    height: 40px;
+    width: 130px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 544px) {
+  .logout-form__button{
+    width: 130px;
+  }
+  .logout-form__row--button{
+    width: 60%;
+  }
 }

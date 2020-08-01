@@ -73,3 +73,115 @@
   margin: -0.25px;
   border: 1.0px solid transparent;
 }
+
+@media (max-width: 1500px) {
+  #register__separator{
+    margin-bottom: 20px;
+    height: 150px;
+  }
+  .register__section{
+    height: 70%;
+    justify-content: flex-start;
+  }
+  .register-form__row--input{
+    padding: 0 20px;
+    &:nth-of-type(3){
+      padding-bottom: 20px;
+    }
+  }
+  .register-form__label--email{
+    margin-top: 20px;
+  }
+  .register-form__label--psswrd{
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .register-form__row--button{
+    height: 50px;
+  }
+  .register-form__button{
+    margin-top: 20px;
+  }
+  .register-empty-div--error{
+    padding-top: 12.5px;
+  }
+}
+@media (max-width: 1024px) {
+  #register__separator{
+    height: 100px;
+  }
+  .register-form{
+    width: 40%;
+  }
+  .register-form__row--button{
+    height: 40px;
+  }
+  .register-form__button{
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 760px) {
+  #register__separator{
+    height: 80px;
+  }
+  .register-form{
+    width: 50%;
+  }
+  .register-form__label{
+    font-size: 13px;
+  }
+  .register-form__input{
+    font-size: 15px;
+  }
+  .register-form__row--button{
+    height: 40px;
+  }
+  .register-form__button{
+    margin-top: 20px;
+    padding: 5px 10px;
+    height: 40px;
+    width: 110px;
+  }
+  .register-form__button--left{
+    font-size: 15px;
+  }
+  .register-form__button--right{
+    font-size: 15px;
+  }
+}
+@media (max-width: 544px) {
+  #register__separator{
+    height: 50px;
+  }
+  .register-form{
+    width: 80%;
+  }
+  .register-form__row--input{
+    padding: 0 15px;
+    &:nth-of-type(3){
+      padding-bottom: 15px;
+    }
+  }
+  .register-form__label{
+    font-size: 12px;
+  }
+  .register-form__row--button{
+    height: 40px;
+  }
+  .register-form__col--buttons{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+      display: flex;
+    }
+  }
+  .register-form__button--left{
+    font-size: 15px;
+  }
+  .register-form__button--right{
+    font-size: 15px;
+  }
+}

@@ -91,11 +91,11 @@ const Login = () => {
                         </div>
                     </div>
                     <div className='row form__row login-form__row login-form__row--button'>
-                        <div className='col-6 form__col login-form__col'>
+                        <div className='col-6 form__col login-form__col login-form__col--buttons'>
                             <Link className='nav-link form__button login-form__button login-form__button--left'
                                   to='/rejestracja'>Załóż konto</Link>
                         </div>
-                        <div className='col-6 form__col login-form__col'>
+                        <div className='col-6 form__col login-form__col login-form__col--buttons'>
                             {(errorEmail || errorPassword || email === '' || password === '')
                                 ?
                                 <button className="form__button login-form__button login-form__button--right"

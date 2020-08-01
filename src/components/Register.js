@@ -119,11 +119,11 @@ const Register = () => {
                         </div>
                     </div>
                     <div className='row form__row register-form__row register-form__row--button'>
-                        <div className='col-6 form__col register-form__col'>
+                        <div className='col-6 form__col register-form__col register-form__col--buttons'>
                             <Link className='nav-link form__button register-form__button register-form__button--left'
                                   to='/logowanie'>Zaloguj się</Link>
                         </div>
-                        <div className='col-6 form__col register-form__col'>
+                        <div className='col-6 form__col register-form__col register-form__col--buttons'>
 
                             {(errorEmail || errorPassword || errorPasswordRepeat || email === '' || password === '' || passwordRepeat === '')
                                 ?

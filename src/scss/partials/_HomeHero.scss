@@ -12,7 +12,6 @@
 .row {
   height: 100%;
   width: 100%;
-  overflow-x: hidden
 }
 
 .col-6 {
@@ -92,6 +91,7 @@
     height: calc(903px - 37px - 95px);
   }
   .hero--left {
+    overflow-x: hidden;
     img {
       left: -783px;
       width: 1368px;
