@@ -22,9 +22,15 @@
   position: relative;
 }
 
+@media (max-width: 1300px) {
+  .form__formStep {
+    height: 760px;
+  }
+}
 @media (max-width: 1024px) {
   .form__formStep {
     //width: 100%;
+    overflow: hidden;
     height: 650px;
     position: relative;
     &:before{
@@ -38,11 +44,38 @@
 }
 @media (max-width: 768px) {
   .form__formStep {
+    width: 100%;
     background: #EDEDEB!important;
-    height: 550px;
+    overflow: hidden;
+    height: 500px;
     &:before{
       height: 0;
       width: 0;
     }
+  }
+  .formStep__row{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+}
+@media (max-width: 768px) {
+  .form__formStep {
+    height: 450px;
+  }
+}
+@media (max-width: 550px) {
+  .form__formStep {
+    height: 430px;
+  }
+}
+@media (max-width: 450px) {
+  .form__formStep {
+    height: 470px;
+  }
+}
+@media (max-width: 375px) {
+  .form__formStep {
+    height: 430px;
   }
 }

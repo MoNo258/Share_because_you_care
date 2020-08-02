@@ -15,11 +15,15 @@
     font-size: 24px;
   }
   .step__title {
-    margin-top: 70px;
+    margin-top: 50px;
     font-size: 33px;
   }
 }
-@media (max-width: 1300px) {}
+@media (max-width: 1300px) {
+  .step__title {
+    margin-top: 45px;
+  }
+}
 @media (max-width: 1024px) {
   .step__number {
     margin-top: 30px;
@@ -36,6 +40,7 @@
     font-size: 18px;
   }
   .step__title {
+    width: 115%;
     margin-top: 30px;
     font-size: 26px;
   }
@@ -54,6 +59,7 @@
 @media (max-width: 550px) {
   .step__title {
     font-size: 20px;
+    width: 98%;
   }
 }
 @media (max-width: 450px) {

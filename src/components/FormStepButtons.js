@@ -19,14 +19,14 @@ const FormStepButtons = ({stepIndex, possibleSteps, disabledPrev, disabledNext, 
     return (
         <div className='step__prevNext'>
             <button
-                className='step__prev'
+                className='button__step step__prev'
                 onClick={e => handleClickPrev(e)}
                 disabled={disabledPrev}
             >
                 Wstecz
             </button>
             <button
-                className='step__next'
+                className='button__step step__next'
                 onClick={e => handleClickNext(e)}
                 disabled={disabledNext}
             >
