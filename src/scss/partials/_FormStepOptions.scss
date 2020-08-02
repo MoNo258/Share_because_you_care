@@ -79,9 +79,6 @@
   height: 40px;
   width: 200px;
   cursor: pointer;
-  &:focus{
-    background: red;
-  }
 }
 .bags__option{
   font-size: 24px;
@@ -95,7 +92,7 @@
   margin-bottom: 50px;
 }
 .location__span{
-  margin-right: 15px;
+  margin-right: 0;
 }
 .location__select{
   padding-left: 10px;
@@ -105,9 +102,6 @@
   height: 40px;
   width: 250px;
   cursor: pointer;
-  &:focus{
-    background: red;
-  }
 }
 .location__option{
   font-size: 24px;
@@ -236,7 +230,6 @@
 }
 //END form step4: options: when
 
-
 //START form summary
 .options__summary{
   height: 100%;
@@ -319,3 +312,845 @@
 }
 .thanks__image{}
 //END form thanks
+
+@media (max-width: 1650px) {
+  .step__options {
+    margin-top: 44px;
+    font-size: 22px;
+    font-weight: lighter;
+  }
+
+  //START form step1: options: items
+  .items__options {
+    .items__label{
+      margin-bottom: 35px;
+      font-size: 22px;
+    }
+  }
+  //END form step1: options: items
+
+  //START form step2: options: bags
+  .bags__option{
+    font-size: 22px;
+  }
+  //End form step2: options: bags
+
+  //START form step3: options: location
+  .options__location--first{
+    margin-bottom: 30px;
+  }
+  .location__option{
+    font-size: 22px;
+  }
+  .options__location--second {
+    width: 100%;
+    .location__label{
+      margin-bottom: 8px;
+      font-size: 22px;
+      padding: 10px;
+    }
+  }
+  .location__subtitle--second{
+    font-size: 22px;
+  }
+  .location__label--specific{
+    font-size: 22px;
+  }
+  .location__input--specific{
+    width: 80%;
+  }
+  //END form step3: options: location
+
+  //Start form step4: options: when
+  .options__when{}
+  .when__row{
+    width: 120%;
+  }
+  .when__col--address{
+    font-size: 22px;
+  }
+  .when__col--date{
+    font-size: 22px;
+  }
+  .when__labelInput{
+    margin-bottom: 25px;
+  }
+  .when__label{
+    font-size: 22px;
+    width: 80px;
+  }
+  .when__input{
+    font-size: 20px;
+    width: 180px;
+  }
+  .button__checkForm{
+    right: -436px;
+  }
+  //END form step4: options: when
+
+  //START form summary
+  .summary__row{
+    width: 120%;
+  }
+  .summary__title{
+    font-size: 34px;
+  }
+  .summary__subtitle{
+    font-size: 22px;
+  }
+  .summary__item--text{
+    font-size: 22px;
+  }
+  .summary__label{
+    font-size: 20px;
+  }
+  .summary__value{
+    font-size: 19px;
+  }
+  //END form summary
+
+  //START form thanks
+  .thanks__row{
+    width: 120%;
+  }
+  .thanks__col{
+    margin-top: 100px;
+  }
+  .thanks__text{;
+    font-size: 38px;
+  }
+  //END form thanks
+}
+@media (max-width: 1300px) {
+  //START form step1: options: items
+  .items__options {
+    width: 120%;
+  }
+  //END form step1: options: items
+
+  //START form step4: options: when
+  .when__row{
+    width: 130%;
+  }
+  .button__checkForm{
+    right: -406px;
+  }
+  //END form step4: options: when
+}
+@media (max-width: 1024px) {
+  .step__options {
+    width: 100%;
+    margin-top: 40px;
+    font-size: 20px;
+  }
+
+  //START form step1: options: items
+  .items__options {
+    width: 140%;
+    .items__label{
+      margin-bottom: 25px;
+      font-size: 20px;
+    }
+  }
+  .items__input:not(:checked),
+  .items__input:checked{
+    bottom: 5px;
+  }
+  .items__input:not(:checked):before{
+    background: #FBFBFB;
+  }
+  //END form step1: options: items
+
+  //START form step2: options: bags
+  .bags__select{
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 35px;
+    width: 180px;
+  }
+  .bags__option{
+    font-size: 20px;
+    background: #FBFBFB;
+  }
+  //End form step2: options: bags
+
+  //START form step3: options: location
+  .options__location--first{
+    margin-bottom: 25px;
+  }
+  .location__select{
+    padding-left: 8px;
+    padding-right: 8px;
+    height: 35px;
+    width: 200px;
+  }
+  .location__option{
+    font-size: 20px;
+    background: #FBFBFB;
+  }
+  .options__location--second {
+    width: 120%;
+    .location__label{
+      margin-bottom: 6px;
+      font-size: 20px;
+      padding: 8px;
+    }
+  }
+  .location__subtitle--second{
+    font-size: 20px;
+  }
+  .location__label--specific{
+    margin-top: 0px;
+    font-size: 20px;
+  }
+  .location__input--specific{
+    width: 90%;
+  }
+  //END form step3: options: location
+
+  //START form step4: options: when
+  .when__row{
+    width: 150%;
+  }
+  .when__col--address{
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .when__col--date{
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .when__labelInput{
+    margin-bottom: 20px;
+  }
+  .when__label{
+    font-size: 20px;
+  }
+  .when__input{
+    font-size: 18px;
+  }
+  .button__checkForm{
+    font-size: 14px;
+    height: 60px;
+    width: 180px;
+    bottom: 15px;
+    right: -416px;
+  }
+  .errorsList__submit{
+    margin-top: -70px;
+  }
+  .errorsItems__submit{
+    font-size: 10.5px;
+  }
+  .successItems__submit{
+    font-size: 15px;
+  }
+  //END form step4: options: when
+
+  //START form summary
+  .summary__row{
+    width: 130%;
+  }
+  .summary__title{
+    width: 130%;
+    margin-top: 20px;
+    font-size: 32px;
+    margin-bottom: 30px;
+  }
+  .summary__subtitle{
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  .summary__list{
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  .summary__item{
+    margin-bottom: 10px;
+  }
+  .summary__item--image{
+    width: 35px;
+    height: 35px;
+    bottom: 8px;
+  }
+  .summary__item--text{
+    font-size: 20px;
+  }
+  .summary__label{
+    font-size: 18px;
+  }
+  .summary__value{
+    font-size: 17px;
+    width: 240px;
+  }
+  //END form summary
+
+  //START form thanks
+  .thanks__row{
+    width: 110%;
+  }
+  .thanks__col{
+    margin-top: 50px;
+  }
+  .thanks__text{;
+    width: 100%;
+    font-size: 36px;
+    line-height: 43px;
+  }
+  .thanks__image{
+    width: 200px;
+  }
+  //END form thanks
+}
+@media (max-width: 768px) {
+  .step__options {
+    margin-top: 25px;
+    font-size: 18px;
+  }
+
+  //START form step1: options: items
+  .items__options {
+    width: 100%;
+    .items__label{
+      margin-bottom: 18px;
+      font-size: 18px;
+    }
+  }
+  .items__input:not(:checked),
+  .items__input:checked{
+    bottom: 3px;
+  }
+  .items__input:not(:checked):before{
+    background: #EDEDEB;
+  }
+  //END form step1: options: items
+
+  //START form step2: options: bags
+  .options__bags {}
+  .bags__label{}
+  .bags__span{
+  }
+  .bags__select{
+    height: 35px;
+    width: 170px;
+  }
+  .bags__option{
+    font-size: 18px;
+    background: #EEEDEB;
+  }
+  //END form step2: options: bags
+
+  //START form step3: options: location
+  .options__location--first{
+    margin-bottom: 20px;
+  }
+  .location__select{
+    height: 35px;
+    width: 175px;
+  }
+  .location__option{
+    font-size: 18px;
+    background: #EEEDEB;
+  }
+  .options__location--second {
+    width: 100%;
+    .location__label{
+      margin-bottom: 5px;
+      font-size: 18px;
+    }
+  }
+  .location__subtitle--second{
+    font-size: 18px;
+  }
+  .location__label--specific{
+    font-size: 18px;
+  }
+  .location__input--specific{
+    width: 80%;
+  }
+  //END form step3: options: location
+
+  //START form step4: options: when
+  .when__row{
+    width: 100%;
+  }
+  .when__col--address{
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .when__col--date{
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .when__labelInput{
+    margin-bottom: 10px;
+  }
+  .when__label{
+    font-size: 18px;
+  }
+  .when__input{
+    font-size: 16px;
+  }
+  .button__checkForm{
+    bottom: 10px;
+    right: -459px;
+  }
+  .errorsList__submit{
+    margin-top: -65px;
+  }
+  //END form step4: options: when
+
+  //START form summary
+  .summary__row{
+    width: 100%;
+  }
+  .summary__title{
+    width: 100%;
+    margin-top: 40px;
+    font-size: 30px;
+    margin-bottom: 25px;
+  }
+  .summary__subtitle{
+    font-size: 18px;
+  }
+  .summary__item--image{
+    width: 35px;
+    height: 35px;
+    bottom: 8px;
+  }
+  .summary__item--text{
+    font-size: 18px;
+  }
+  .summary__label{
+    font-size: 16px;
+  }
+  .summary__value{
+    font-size: 15px;
+  }
+  //END form summary
+
+  //START form thanks
+  .options__thanks{
+    margin-top: 30px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .thanks__row{
+    width: 100%;
+  }
+  .thanks__col{
+    margin-top: 50px;
+  }
+  .thanks__text{
+    width: 85%;
+    font-size: 34px;
+    line-height: 41px;
+  }
+  .thanks__image{
+    width: 180px;
+  }
+  //END form thanks
+}
+@media (max-width: 620px) {
+  .step__options {
+    font-size: 16px;
+  }
+
+  //START form step1: options: items
+  .items__options {
+    .items__label{
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+  }
+  .items__input:not(:checked),
+  .items__input:checked{
+    bottom: 1px;
+  }
+  //END form step1: options: items
+
+  //START form step2: options: bags
+  .bags__select{
+    height: 30px;
+    width: 160px;
+  }
+  .bags__option{
+    font-size: 16px;
+  }
+  //END form step2: options: bags
+
+  //START form step3: options: location
+  .location__select{
+    height: 30px;
+    width: 170px;
+  }
+  .location__option{
+    font-size: 16px;
+  }
+  .options__location--second {
+    .location__label{
+      font-size: 16px;
+    }
+  }
+  .location__subtitle--second{
+    font-size: 16px;
+  }
+  .location__label--specific{
+    font-size: 16px;
+  }
+  .location__input--specific{
+    width: 70%;
+  }
+  //END form step3: options: location
+
+  //START form step4: options: when
+  .when__col--address{
+    font-size: 16px;
+  }
+  .when__col--date{
+    font-size: 16px;
+  }
+  .when__label{
+    font-size: 16px;
+    width: 70px;
+  }
+  .when__input{
+    font-size: 14px;
+    width: 165px;
+  }
+  .button__checkForm{
+    width: 165px;
+    right: -359px;
+  }
+  .errorsList__submit{
+    margin-top: -65px;
+  }
+  //END form step4: options: when
+
+  //START form summary
+  .summary__title{
+    margin-top: 50px;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  .summary__subtitle{
+    font-size: 16px;
+  }
+  .summary__item--image{
+    width: 30px;
+    height: 30px;
+    bottom: 8px;
+  }
+  .summary__item--text{
+    font-size: 16px;
+  }
+  .summary__label{
+    font-size: 14px;
+  }
+  .summary__value{
+    font-size: 13px;
+  }
+  //END form summary
+
+  //START form thanks
+  .options__thanks{
+    margin-top: 15px;
+  }
+  .thanks__text{
+    font-size: 32px;
+    line-height: 39px;
+  }
+  .thanks__image{
+    width: 160px;
+  }
+  //END form thanks
+}
+@media (max-width: 550px) {
+  .step__options {
+    font-size: 15px;
+  }
+
+  //START form step1: options: items
+  .items__options {
+    .items__label{
+      margin-bottom: 15px;
+      font-size: 15px;
+    }
+  }
+  .items__input:not(:checked),
+  .items__input:checked{
+    bottom: 0px;
+  }
+  //END form step1: options: items
+
+  //START form step2: options: bags
+  .bags__select{
+    height: 28px;
+    width: 150px;
+  }
+  .bags__option{
+    font-size: 15px;
+  }
+  //END form step2: options: bags
+
+  //START form step3: options: location
+  .location__select{
+    height: 28px;
+    width: 155px;
+  }
+  .location__option{
+    font-size: 15px;
+  }
+  .options__location--second {
+    .location__label{
+      font-size: 15px;
+    }
+  }
+  .location__subtitle--second{
+    font-size: 15px;
+  }
+  .location__label--specific{
+    font-size: 15px;
+  }
+  .location__input--specific{
+    width: 70%;
+  }
+  //END form step3: options: location
+
+  //START form step4: options: when
+  .when__col--address{
+    font-size: 15px;
+  }
+  .when__col--date{
+    font-size: 15px;
+  }
+  .when__label{
+    font-size: 15px;
+    width: 65px;
+  }
+  .when__input{
+    font-size: 13px;
+    width: 140px;
+  }
+  .button__checkForm{
+    font-size: 13px;
+    height: 50px;
+    width: 140px;
+    right: -344px;
+  }
+  .errorsList__submit{
+    margin-top: -57px;
+  }
+  //END form step4: options: when
+
+  //START form summary
+  .summary__title{
+    font-size: 27px;
+  }
+  .summary__subtitle{
+    font-size: 15px;
+  }
+  .summary__item--image{
+    width: 25px;
+    height: 25px;
+    bottom: 5px;
+  }
+  .summary__item--text{
+    font-size: 15px;
+  }
+  .summary__label{
+    font-size: 13px;
+  }
+  .summary__value{
+    font-size: 13px;
+    font-weight: 400;
+  }
+  //END form summary
+
+  //START form thanks
+  .options__thanks{
+    margin-top: 0px;
+  }
+  .thanks__text{
+    font-size: 28px;
+    line-height: 37px;
+  }
+  .thanks__image{
+    width: 150px;
+  }
+  //END form thanks
+}
+@media (max-width: 450px) {
+  .step__options {
+    font-size: 14px;
+  }
+
+  //START form step1: options: items
+  .items__options {
+    .items__label{
+      font-size: 14px;
+    }
+  }
+  //END form step1: options: items
+
+  //START form step2: options: bags
+  .bags__select{
+    height: 27px;
+    width: 140px;
+  }
+  .bags__option{
+    font-size: 14px;
+  }
+  //END form step2: options: bags
+
+  //START form step3: options: location
+  .location__select{
+    height: 27px;
+    width: 145px;
+  }
+  .location__option{
+    font-size: 14px;
+  }
+  .options__location--second {
+    .location__label{
+      font-size: 14px;
+    }
+  }
+  .location__subtitle--second{
+    font-size: 14px;
+  }
+  .location__label--specific{
+    font-size: 14px;
+  }
+  .location__input--specific{
+    width: 80%;
+  }
+  //END form step3: options: location
+
+  //START form step4: options: when
+  .when__col--address{
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .when__col--date{
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  .when__labelInput{
+    flex-direction: column;
+  }
+  .when__label{
+    font-size: 14px;
+    width: 140px;
+    margin-bottom: 2px;
+  }
+  .when__input{
+    width: 150px;
+    margin-bottom: -2px;
+  }
+  .button__checkForm{
+    height: 40px;
+    width: 150px;
+    right: -215px;
+  }
+  .errorsList__submit{
+    margin-top: -45px;
+  }
+  //END form step4: options: when
+
+  //START form summary
+  .options__summary{
+    width: 110%;
+    margin-top: -80px;
+  }
+  .summary__title{
+    font-size: 25px;
+    margin-bottom: 40px;
+  }
+  .summary__subtitle{
+    font-size: 14px;
+  }
+  .summary__item--text{
+    font-size: 14px;
+  }
+  .summary__value{
+    width: 250px;
+  }
+  //END form summary
+
+  //START form thanks
+  .thanks__text{
+    font-size: 25px;
+    line-height: 34px;
+  }
+  .thanks__image{
+    width: 140px;
+  }
+  //END form thanks
+}
+@media (max-width: 375px) {
+  //START form step3: options: location
+  .options__location--first{
+    margin-bottom: 15px;
+    margin-top: -10px;
+  }
+  .location__input--specific{
+    width: 90%;
+  }
+  //END form step3: options: location
+
+  //START form step4: options: when
+  .when__row{
+    margin-top: -13px;
+  }
+  .when__col--address{
+    font-size: 13px;
+  }
+  .when__col--date{
+    font-size: 13px;
+  }
+  .when__label{
+    font-size: 13px;
+  }
+  .when__input{
+    width: 150px;
+    margin-bottom: -4px;
+  }
+  .button__checkForm{
+    height: 30px;
+    bottom: 0;
+    right: -178px;
+  }
+  .errorsList__submit{
+    margin-top: -35px;
+  }
+  //END form step4: options: when
+
+  //START form summary
+  .options__summary{
+    width: 110%;
+  }
+  .summary__title{
+    font-size: 22px;
+    margin-bottom: 30px;
+  }
+  .summary__value{
+    width: 260px;
+  }
+  //END form summary
+
+  //START form thanks
+  .options__thanks{
+    margin-top: 20px;
+  }
+  .thanks__text{
+    font-size: 22px;
+    line-height: 31px;
+  }
+  .thanks__image{
+    width: 130px;
+  }
+  //END form thanks
+}

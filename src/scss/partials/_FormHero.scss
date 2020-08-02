@@ -180,11 +180,13 @@
   }
   .formHero__row {
     justify-content: center;
+    width: 100%;
   }
   .formHero--left {
     display: none;
   }
   .formHero--right {
+    width: 100%;
     margin-top: 50px;
   }
   .formHero__title {
