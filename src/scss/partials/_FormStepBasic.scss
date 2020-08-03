@@ -15,6 +15,7 @@
 .formStep__col {
   padding: 0;
   height: 100%;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -59,7 +60,7 @@
     padding: 0;
   }
 }
-@media (max-width: 768px) {
+@media (max-width: 620px) {
   .form__formStep {
     height: 450px;
   }

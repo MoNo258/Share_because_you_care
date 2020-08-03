@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
-import {Link} from "react-router-dom";
-import {Link as LinkScroll} from "react-scroll";
+import { HashLink as Link } from 'react-router-hash-link';
 import classNames from "classnames";
 
 const HeaderNavForOthers = () => {
@@ -17,33 +16,32 @@ const HeaderNavForOthers = () => {
         <>
             <ul className='nav justify-content-end nav--second'>
                 <li className='nav-item'>
-                    <Link to="/" className='nav-link'>
+                    <Link to="/#HomeHero" className='nav-link'>
                         Start
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to="/" className='nav-link'>
+                    <Link to="/#SeparatorFour" className='nav-link'>
                         O co chodzi?
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to="/" className='nav-link'>
+                    <Link to="/#HomeAboutUs" className='nav-link'>
                         O nas
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to="/" className='nav-link'>
+                    <Link to="/#SeparatorOptions" className='nav-link'>
                         Fundacja i organizacje
                     </Link>
                 </li>
                 <li className='nav-item'>
-                    <Link to="/" className='nav-link'>
+                    <Link to="/#HomeContactUs" className='nav-link'>
                         Kontakt
                     </Link>
                 </li>
             </ul>
             <nav className="navbar navbar-light light-blue lighten-4 nav--burger">
-                <a className="navbar-brand" href="/"></a>
                 <button className="navbar-toggler toggler-example page-nav-burger" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent1"
                         aria-controls="navbarSupportedContent1" aria-expanded="false"
@@ -57,34 +55,29 @@ const HeaderNavForOthers = () => {
                      id="navbarSupportedContent1">
                     <ul className="navbar-nav mr-auto" >
                         <li className='nav-item'>
-                            <LinkScroll activeClass='active' to="HomeHero" spy={true} smooth={true} offset={0}
-                                        duration={500} className='nav-link'>
+                            <Link to="/#HomeHero" className='nav-link'>
                                 Start
-                            </LinkScroll>
+                            </Link>
                         </li>
                         <li className='nav-item'>
-                            <LinkScroll activeClass='active' to="SeparatorFour" spy={true} smooth={true} offset={2}
-                                        duration={500} className='nav-link'>
+                            <Link to="/#SeparatorFour" className='nav-link'>
                                 O co chodzi?
-                            </LinkScroll>
+                            </Link>
                         </li>
                         <li className='nav-item'>
-                            <LinkScroll activeClass='active' to="HomeAboutUs" spy={true} smooth={true} offset={1}
-                                        duration={500} className='nav-link'>
+                            <Link to="/#HomeAboutUs" className='nav-link'>
                                 O nas
-                            </LinkScroll>
+                            </Link>
                         </li>
                         <li className='nav-item'>
-                            <LinkScroll activeClass='active' to="SeparatorOptions" spy={true} smooth={true} offset={1}
-                                        duration={500} className='nav-link'>
+                            <Link to="/#SeparatorOptions" className='nav-link'>
                                 Fundacja i organizacje
-                            </LinkScroll>
+                            </Link>
                         </li>
                         <li className='nav-item'>
-                            <LinkScroll activeClass='active' to="HomeContactUs" spy={true} smooth={true} offset={40}
-                                        duration={500} className='nav-link'>
+                            <Link to="/#HomeContactUs" className='nav-link'>
                                 Kontakt
-                            </LinkScroll>
+                            </Link>
                         </li>
                     </ul>
                 </div>

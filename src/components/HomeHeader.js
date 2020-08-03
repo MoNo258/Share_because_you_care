@@ -1,6 +1,7 @@
 import React from 'react';
 import HeaderNavForMain from "./HeaderNavForMain";
 import HeaderNavForOthers from "./HeaderNavForOthers";
+import HeaderNavForForm from "./HeaderNavForForm";
 import HeaderNavbarForStranger from "./HeaderNavbarForStranger";
 import HeaderNavbarForLogged from "./HeaderNavbarForLogged";
 import HeaderNavbarForForm from "./HeaderNavbarForForm";
@@ -10,34 +11,34 @@ const HomeHeader = ({param}) => {
         <section className='home__header container-fluid'>
             {param === 'main'
                 ?
-                <HeaderNavbarForStranger/>
+                <HeaderNavbarForStranger />
                 :
                 param === 'others'
                     ?
-                    <HeaderNavbarForStranger/>
+                    <HeaderNavbarForStranger />
                     :
                     param === 'logged'
                         ?
-                        <HeaderNavbarForLogged/>
+                        <HeaderNavbarForLogged />
                         : param === 'form'
                         ?
-                        <HeaderNavbarForForm/>
+                        <HeaderNavbarForForm />
                         : null
             }
             {param === 'main'
                 ?
-                <HeaderNavForMain/>
+                <HeaderNavForMain />
                 :
                 param === 'others'
                     ?
-                    <HeaderNavForOthers/>
+                    <HeaderNavForOthers />
                     :
                     param === 'logged'
                         ?
-                        <HeaderNavForMain/>
+                        <HeaderNavForMain />
                         : param === 'form'
                         ?
-                        <HeaderNavForMain/>
+                        <HeaderNavForForm />
                         : null
             }
         </section>

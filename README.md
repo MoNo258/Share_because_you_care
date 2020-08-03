@@ -2,7 +2,8 @@
 Project was created as part of Coders Lab course. Prototype of the project ("Oddam w dobre ręce") was prepared by Coders Lab graduate - Magda - in Adobe XD.
 
 ## Demo:
-## [Share because you care link](https://mono258.github.io/Share_because_you_care)
+## [Share because you care link](https://mono258.github.io/Share_because_you_care) `*`
+#### `*` To access user's part please use login `person@person.person` and password: `person`.
 
 ## This project uses
 * create-react-app (This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).)

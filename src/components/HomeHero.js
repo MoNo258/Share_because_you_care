@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import heroImage from '../assets/Home-Hero-Image.jpg';
 import heroSeparator from '../assets/Decoration.svg'
 import {auth} from "../firebase/firebase.config";
@@ -28,7 +29,9 @@ const HomeHero = ({id}) => {
                             <li className='list__item'>
                                 {!user
                                     ? <Link to='/logowanie' className='btn btn-lg list__btn'>Oddaj rzeczy</Link>
-                                    : <Link to='/oddaj-rzeczy' className='btn btn-lg list__btn'>Oddaj rzeczy</Link>
+                                    : <HashLink to='/oddaj-rzeczy#FormHero' className='btn btn-lg list__btn'>
+                                        Oddaj rzeczy
+                                    </HashLink>
                                 }
                             </li>
                             <li className='list__item'>
