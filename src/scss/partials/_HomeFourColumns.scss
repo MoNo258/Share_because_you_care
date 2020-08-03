@@ -47,9 +47,11 @@
 }
 
 @media (max-width: 1024px) {
-  .four-columns__card{
+  .four-columns__card {
     height: 100%;
     width: 100%;
+  }
+  .four-columns{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -77,6 +79,11 @@
 @media (max-width: 991px) {
   .home__four-columns{
     height: 700px;
+  }
+  .four-columns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .four-columns__card{
     height: 25%;

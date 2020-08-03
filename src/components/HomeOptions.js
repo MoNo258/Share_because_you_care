@@ -30,7 +30,7 @@ const HomeOptions = () => {
                         </div>
                     </div>
                     <div className='row options__row'>
-                        <div className='col-6 col-md-8 col-sm-11 col-xs-12 options__card'>
+                        <div className='col-xl-6 col-md-8 col-sm-11 col-xs-12 options__card options__card--desc'>
                             W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi współpracujemy. Możesz
                             sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
                         </div>

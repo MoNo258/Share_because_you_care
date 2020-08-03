@@ -19,7 +19,11 @@
     max-width: 800px;
   }
 }
-
+@media (max-width: 775px) {
+  .container-fluid {
+    max-width: 775px;
+  }
+}
 
 @media (max-width: 414px) {
   .container-fluid {

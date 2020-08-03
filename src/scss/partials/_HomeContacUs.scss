@@ -196,10 +196,30 @@
     font-size: 17px;
     margin-bottom: 58px;
   }
+  .contact-form{
+    width: 130%;
+  }
+}
+@media (max-width: 991px) {
+  .contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact-form{
+    width: 100%;
+  }
 }
 @media (max-width: 775px) {
   .home__contact{
     height: 650px;
+  }
+
+  .contact__row{
+    width: 100%;
+  }
+  .contact__col {
+    width: 100%;
   }
   .right__title{
     font-size: 30px;
@@ -268,11 +288,26 @@
     font-size: 13px;
   }
   .form__input{
-    font-size: 15px;
+    font-size: 14px;
   }
   .form__button{
     height: 40px;
     width: 130px;
     font-size: 14px;
+  }
+}
+@media (max-width: 500px) {
+  .home__contact{
+    background-size: 900px!important;
+    background-position: left!important;
+  }
+  .contact__col{
+    padding: 0;
+  }
+  .form__col{
+    padding: 5px;
+  }
+  .form__input{
+    font-size: 12px;
   }
 }

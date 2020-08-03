@@ -68,7 +68,7 @@
   }
   .right_image{
     height: auto;
-    width: 540px;
+    width: 620px;
   }
 }
 @media (max-width: 1024px) {
@@ -90,14 +90,19 @@
     height: 80%;
   }
   .right_image{
-    height: auto;
     overflow: hidden;
-    width: 450px;
+    height: 350px;
+    width: auto;
   }
 }
 @media (max-width: 991px) {
   .home__about-us{
     height: 380px;
+  }
+  .about-us{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .left__title{
     margin-top: 20px;

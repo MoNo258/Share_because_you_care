@@ -45,9 +45,21 @@
     width: 80%;
   }
 }
-@media (max-width: 544px) {
+@media (max-width: 575px) {
   .home__separator{
-    height: 110px;
+    height: 160px;
+  }
+  .separator__title{
+    font-size: 25px;
+    margin-bottom: 18px;
+  }
+  .separator__image{
+    width: 70%;
+  }
+}
+@media (max-width: 450px) {
+  .home__separator{
+    height: 100px;
   }
   .separator__title{
     font-size: 18px;

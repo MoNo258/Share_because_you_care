@@ -1154,3 +1154,39 @@
   }
   //END form thanks
 }
+@media (max-width: 320px) {
+  //START form step4: options: when
+  .when__row{
+    margin-top: -18px;
+  }
+  .when__col--address{
+    font-size: 12px;
+  }
+  .when__col--date{
+    font-size: 12px;
+  }
+  .when__label{
+    font-size: 12px;
+  }
+  .when__input{
+    width: 140px;
+  }
+  .button__checkForm{
+    width: 138px;
+    right: -157px;
+  }
+  //END form step4: options: when
+
+  //START form summary
+  .options__summary{
+    width: 125%;
+  }
+  .summary__label{
+    font-size: 12px;
+  }
+  .summary__value{
+    width: 250px;
+    font-size: 12px;
+  }
+  //END form summary
+}

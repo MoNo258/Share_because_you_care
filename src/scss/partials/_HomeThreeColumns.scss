@@ -65,6 +65,9 @@
   }
   .three-columns{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .three-columns__card{
     height: 200px;
