@@ -49,7 +49,6 @@ const HeaderNavForMain = () => {
 
 
             <nav className="navbar navbar-light light-blue lighten-4 nav--burger">
-                <a className="navbar-brand" href="/"></a>
                 <button className="navbar-toggler toggler-example page-nav-burger" type="button" data-toggle="collapse"
                         data-target="#navbarSupportedContent1"
                         aria-controls="navbarSupportedContent1" aria-expanded="false"

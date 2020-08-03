@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Link} from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 import {auth} from "../firebase/firebase.config";
 
 const HeaderNavbarForLogged = () => {
@@ -15,7 +16,7 @@ const HeaderNavbarForLogged = () => {
                 <div className='nav-link' >Cześć {user}</div>
             </li>
             <li className='nav-item'>
-                <Link className='nav-link' to='/oddaj-rzeczy' >Oddaj rzeczy</Link>
+                <HashLink className='nav-link' to='/oddaj-rzeczy/#FormHero' >Oddaj rzeczy</HashLink>
             </li>
             <li className='nav-item'>
                 <Link className='nav-link' to='/wylogowano'

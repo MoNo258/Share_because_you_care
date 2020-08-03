@@ -72,17 +72,30 @@
     height: 50px;
     width: 150px;
   }
+  .options__row{
+    width: 100%;
+  }
+  .options__card--desc{
+    width: 100%;
+  }
 }
 @media (max-width: 500px) {
   .home__options{
     height: 180px;
   }
-  .col-3{}
+  .options__row{
+    justify-content: space-around;
+  }
   .options__card{
     font-size: 12px;
     line-height: 17px;
   }
   .options__button {
     font-size: 14px;
+  }
+}
+@media (max-width: 300px) {
+  .options__button {
+    font-size: 13px;
   }
 }

@@ -1,6 +1,7 @@
 @import "../settings/variables";
 
 .step__options {
+  width: 100%;
   margin-top: 44px;
   font-size: 24px;
   font-weight: lighter;
@@ -8,7 +9,7 @@
 
 //START form step1: options: items
 .items__options {
-  height: 100%;
+  //height: 100%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -90,6 +91,7 @@
 //START form step3: options: location
 .options__location--first{
   margin-bottom: 50px;
+  width: 120%;
 }
 .location__span{
   margin-right: 0;
@@ -110,7 +112,7 @@
 }
 .options__location--second {
   height: 100%;
-  width: 60%;
+  width: 120%;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -161,9 +163,11 @@
 //END form step3: options: location
 
 //Start form step4: options: when
-.options__when{}
-.when__row{
+.options__when{
   width: 100%;
+}
+.when__row{
+  width: 150%;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -212,7 +216,7 @@
   border: 0.75px solid $color-dark-grey;
   position: relative;
   bottom: 0;
-  right: -520px;
+  right: -546px;
   z-index: 9999;
 }
 .errorsList__submit{
@@ -233,7 +237,7 @@
 //START form summary
 .options__summary{
   height: 100%;
-  width: 100%;
+  width: 130%;
   display: flex;
   margin-top: -100px;
 }
@@ -1153,4 +1157,40 @@
     width: 130px;
   }
   //END form thanks
+}
+@media (max-width: 320px) {
+  //START form step4: options: when
+  .when__row{
+    margin-top: -18px;
+  }
+  .when__col--address{
+    font-size: 12px;
+  }
+  .when__col--date{
+    font-size: 12px;
+  }
+  .when__label{
+    font-size: 12px;
+  }
+  .when__input{
+    width: 140px;
+  }
+  .button__checkForm{
+    width: 138px;
+    right: -157px;
+  }
+  //END form step4: options: when
+
+  //START form summary
+  .options__summary{
+    width: 125%;
+  }
+  .summary__label{
+    font-size: 12px;
+  }
+  .summary__value{
+    width: 250px;
+    font-size: 12px;
+  }
+  //END form summary
 }

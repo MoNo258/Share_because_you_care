@@ -175,6 +175,11 @@
   }
 }
 @media (max-width: 768px) {
+  .formHero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .home__formHero {
     margin-bottom: -220px;
   }

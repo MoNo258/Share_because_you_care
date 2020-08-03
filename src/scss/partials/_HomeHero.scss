@@ -168,6 +168,11 @@
   .home__hero {
     height: calc(503px - 37px - 95px);
   }
+  .hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   .hero__title {
     font-size: 22px;
   }

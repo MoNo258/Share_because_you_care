@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Link} from "react-router-dom";
+import { HashLink as Link } from 'react-router-hash-link';
 import {auth} from "../firebase/firebase.config";
 
 const HeaderNavbarForForm = () => {
@@ -15,7 +15,8 @@ const HeaderNavbarForForm = () => {
                 <div className='nav-link' >Cześć {user}</div>
             </li>
             <li className='nav-item'>
-                <Link className='nav-link' to='/' >Strona główna</Link>
+                {/*<Link className='nav-link' to='/' >Strona główna</Link>*/}
+                <Link className='nav-link' to='/#HomeHero' >Strona główna</Link>
             </li>
             <li className='nav-item'>
                 <Link className='nav-link' to='/wylogowano'
